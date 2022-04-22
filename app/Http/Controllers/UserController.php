@@ -171,6 +171,11 @@ class UserController extends Controller
         'user_id' => $id,
         'completed' => 1
       ]);
+
+      $user = UserModel::find($id);
+      $user->email_verified_at =  Carbon::now()->toDateTimeString();
+      $user->update();
+      
       return view('Frontend.activate');
     }
   }
