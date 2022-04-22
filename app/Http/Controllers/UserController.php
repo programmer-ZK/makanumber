@@ -172,8 +172,6 @@ class UserController extends Controller
         'completed' => 1
       ]);
       return view('Frontend.activate');
-      // echo "Account is being activated. Login to continue <br>";
-      // echo "<a href='/admin/login' class='btn m-2 p-1'>Login</a>";
     }
   }
 
