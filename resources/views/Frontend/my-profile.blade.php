@@ -61,7 +61,7 @@ $packages =  DB::table('re_packages')
             @else
             <img src="/frontend-images/profile-pic.jpg" style="width:212px; height:212px; border-radius: 5px;" alt="profile-pic" />
             @endif
-            <input type="file" name="profile_pic" />
+            <input class="mt-3" type="file" name="profile_pic" />
             <button class="btn btn-primary upload-btn" type="submit">Upload New</button>
           </form>
           <form action="/delete-dp/{{Auth::user()->id}}" method="post">
@@ -71,7 +71,7 @@ $packages =  DB::table('re_packages')
           </form>
         </div>
 
-        <div class="col-sm-6 center">
+        <div class="col-sm-5 center">
           <h5>Profile Details</h5>
           <form action="/edit-profile/{{Auth::user()->id}}" method="get">
             <div class="row" style="color:grey;">
@@ -101,19 +101,13 @@ $packages =  DB::table('re_packages')
             </div>
 
             <div class="row mt-5" style="color:grey;">
-              <div class="col-sm-6">
-                <label class="form-label">Facebook(Optional)</label><br />
-                <input type="text" class="form-control" placeholder="John Smith" name="facebook" />
-              </div>
 
-
-              <div class="col-sm-8 mt-3">
-
+              <div class="col-sm-12">
                 <input type="checkbox" name="checkbox" />
                 <label class="form-label">Send properties updates for email</label><br />
               </div>
 
-              <div class="col-sm-12 mt-2">
+              <div class="col-sm-12 mt-2 mb-2">
                 <button class="btn btn-primary green-btn" type="submit">Save Changes</button>
               </div>
           </form>

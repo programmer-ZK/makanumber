@@ -81,7 +81,7 @@ class UserController extends Controller
         });
 
 
-        return redirect()->back()->with('success', 'Agency User CreUser Created Successfully! An activation email has sent to your email, check to login, it maybe in your spams folder');
+        return redirect()->back()->with('success', 'Agency Created Successfully! An activation email has sent to your email, check to login, it maybe in your spams folder');
       } else {
         return redirect()->back()->with('danger', 'User denied!');
       }
@@ -175,7 +175,7 @@ class UserController extends Controller
       $user = UserModel::find($id);
       $user->email_verified_at =  Carbon::now()->toDateTimeString();
       $user->update();
-      
+
       return view('Frontend.activate');
     }
   }
