@@ -315,7 +315,7 @@ $propertyTypes = DB::table('re_categories')
               <div class="row image-border no-guuters" style="border-color:#E5E5E5;">
 
                 <div class="upload">
-                  <input type="file" name="prop_images[]" multiple id="gallery-photo-add">
+                  <input type="file" name="prop_images[]" multiple id="gallery-photo-add" accept="image/x-png,image/gif,image/jpeg">
                   <input type="button" class="uploadButton" name="prop_images[]" value="+ Add Images" />
                   <div class="col-md-12">
                     <div class="gallery"></div>
@@ -339,7 +339,7 @@ $propertyTypes = DB::table('re_categories')
               <div class="row">
                 <label style="color:grey;" class="mt-3">Upload Video Tour</label>
               </div>
-              <div class="row image-border no-guuters" style="border-color:#E5E5E5;">
+              <div class="row image-border no-gutters" style="border-color:#E5E5E5;">
                 <div class="upload">
 
                   <input type="file" name="prop_video" id="fileUpload1" style="cursor:pointer;" />
@@ -435,8 +435,11 @@ $propertyTypes = DB::table('re_categories')
                     for (i = 0; i < filesAmount; i++) {
                         var reader = new FileReader();
                         reader.onload = function(event) {
-                            $($.parseHTML('<img width=200px height=200px>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                        }
+                            var randomId = Math.random().toString(36).slice(2, 7);
+                            $($.parseHTML('<img id="' + randomId + '" width=200px height=200px>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                            $($.parseHTML('<a id="aa' + randomId + '" width=200px height=200pxclass="remove" onclick="removeImage(\'' + randomId + '\')">Remove image</a>')).appendTo(placeToInsertImagePreview);
+                            
+                          }
                         reader.readAsDataURL(input.files[i]);
                     }
                 }
@@ -447,9 +450,16 @@ $propertyTypes = DB::table('re_categories')
             });
         });
 
+        
+
   });
 
-
+  function removeImage(arr) {
+    
+    $('#'+arr).remove();
+    $('#aa'+arr).remove();
+  }
+  
 </script>
 
 @stop

@@ -44,6 +44,7 @@
   min-height:calc(100vh - 60px);
 }
 
+
     .sign-in-button {
         font-weight: 700 !important;
     }
@@ -54,7 +55,6 @@
     }
 
     @media screen and (max-width: 480px) {
-        
         html {
             overflow-x: hidden !important;
         }
@@ -83,14 +83,14 @@
             margin: 0px 20px !important;
         }
 
-        /* .properties h3 {
+        .properties h3 {
             margin: 0px 20px !important;
             /* text-align: center !important; */
-        } */
+        }
 
-        /* .properties .item {
+        .properties .item {
             margin: 0px 20px !important;
-        } */
+        }
 
         .about_logo {
             /* margin: 0px 25px !important; */
@@ -149,9 +149,9 @@
                               style="padding-top:4px;">H</span>ome</a>
                   </li>
                   <div class="dropdown">
-                      <li class="nav-item active mt-1" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                      <li class="nav-item active mt-1  " type="button" id="dropdownMenuButton" data-toggle="dropdown"
                           aria-haspopup="true" aria-expanded="false" style="border:none !important; ">
-                          <a class="nav-link mr-4 hoverEffect" href="#" style="padding-left: 8px;padding-right: 8px;"><span class="nt-1"
+                          <a class="nav-link mr-4 hoverEffect" href="#"><span class="nt-1"
                                   style="padding-top:4px;">B</span>uy <span class="sr-only">(current)</span></a>
                       </li>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -183,7 +183,7 @@
                   <div class="dropdown">
                       <li class="nav-item active mt-1  " type="button" id="dropdownMenuButton" data-toggle="dropdown"
                           aria-haspopup="true" aria-expanded="false" style="border:none !important;">
-                          <a class="nav-link mr-4 hoverEffect" href="#" style="padding-left: 8px;padding-right: 8px;"><span class="nt-1"
+                          <a class="nav-link mr-4 hoverEffect" href="#"><span class="nt-1"
                                   style="padding-top:4px;">R</span>ent</a>
                       </li>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -224,7 +224,7 @@
                   <div class="dropdown">
                       <li class="nav-item active hoverEffect" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                           aria-haspopup="true" aria-expanded="false" style="border:none !important;">
-                          <span class="nav-link" style="padding-top:12px; padding-left: 8px;padding-right: 8px;" href="#"><span
+                          <span class="nav-link" style="padding-top:12px;" href="#"><span
                                   class="pr-1">More</span><span class="fa fa-bars  "
                                   style="margin-bottom:-10px !important; font-size:18px; "></span></span>
                       </li>

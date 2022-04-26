@@ -22,6 +22,9 @@ class UserController extends Controller
       'confirm_password' => 'same:password',
     ]);
 
+    $roles = DB::table('roles')->where("id", 2)->first();
+    
+
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';
@@ -39,7 +42,8 @@ class UserController extends Controller
     $user->documents = $request->document;
     $user->super_user = $request->super_user;
     $user->remember_token = $randomString;
-
+    $user->permissions = $roles->permissions;
+   
 
     $ifEmailExists = DB::table('users')->where('email', $request->email)->value('email');
     if ($ifEmailExists == $request->email) {
@@ -80,7 +84,22 @@ class UserController extends Controller
           $message->from("noreply@makanumber.com", "Makanumber");
         });
 
+        if($request->hasFile('letter')){
+          $documents = new Document;
+          $image = $request->file('letter');
+  
+          $name = time() . '.' . $image->getClientOriginalExtension();
+          $destinationPath = public_path('/storage/documents');
+          $image->move($destinationPath, $name);
+          // dd($request);
+          $documents->user_id = $user->id;
+          $documents->letter = $name;
+          $documents->save();
 
+          $user->documents = $documents->id;
+          $user->save();
+
+        }
         return redirect()->back()->with('success', 'Agency Created Successfully! An activation email has sent to your email, check to login, it maybe in your spams folder');
       } else {
         return redirect()->back()->with('danger', 'User denied!');
@@ -139,6 +158,7 @@ class UserController extends Controller
             'updated_at' => Carbon::now()->toDateTimeString(),
           )
         );
+
 
 
         $to_name = $request->name;
@@ -240,7 +260,7 @@ class UserController extends Controller
 
   public function uploadDoc(Request $request)
   {
-
+    if($request->hasFile('letter')){
     $documents = new Document;
     $documents->user_id = Auth::user()->id;
 
@@ -262,6 +282,9 @@ class UserController extends Controller
     }
 
     return back()->with('success', 'Documents Uploaded Successfully!');
+  }else{
+    return back()->with('error', 'Something went wrong');
+  }
   }
 
 
@@ -320,5 +343,23 @@ class UserController extends Controller
     }
 
     return back()->with('success', 'Documents Uploaded Successfully!');
+  }
+
+  public function downloadDoc()
+  {
+    
+    return response()->json(phpinfo());
+  //   ini_set('allow_url_fopen',1);
+  //   $user = Auth::user()->documents;
+  //   $document = Document::where("id", $user)->first();
+  //   $file = public_path().'/storage/bahria-enclave-entrance-150x150.jpg';
+  //   $headers = [
+  //     'Access-Control-Allow-Origin' => '*',
+  //     'Access-Control-Allow-Methods' => 'GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS',
+  //     'Access-Control-Allow-Headers' => '*',
+  // ];
+ 
+  //  return response()->download($file,'fole.pdf',$headers);
+
   }
 }

@@ -42,7 +42,7 @@ Route::get('/add-property', function () {
     return view('Frontend.add-property');
 });
 
-Route::get('/agency-signUp', 'App\Http\Controllers\UserController@agencySignUp');
+Route::post('/agency-signUp', 'App\Http\Controllers\UserController@agencySignUp');
 
 Route::get('/activation/{token}', 'App\Http\Controllers\UserController@activation');
 
@@ -59,7 +59,7 @@ Route::delete('/delete-dp/{id}', 'App\Http\Controllers\UserController@deleteDp')
 
 // Docs
 Route::post('/upload-doc', 'App\Http\Controllers\UserController@uploadDoc');
-
+Route::get('/download-doc', 'App\Http\Controllers\UserController@downloadDoc');
 Route::post('/upload-funds', 'App\Http\Controllers\UserController@uploadFunds');
 
 Route::post('/home-sale', 'App\Http\Controllers\UserController@homeSale');

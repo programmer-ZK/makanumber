@@ -85,6 +85,7 @@
             @endif
 
         </div>
+        
         <div class="col-md-9 col-sm-7">
             <div class="profile-content">
                 <div class="tabbable-custom">
@@ -114,6 +115,39 @@
                     <!-- END CHANGE PASSWORD TAB -->
                     {!! apply_filters(ACL_FILTER_PROFILE_FORM_TAB_CONTENTS, null) !!}
                 </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-5">
+
+        </div>
+        <div class="col-md-9 col-sm-7">
+            <div class="profile-content">
+                <div class="tabbable-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a href="#tab_1_3" class="nav-link active" data-bs-toggle="tab" aria-expanded="true">Documents</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <!-- PERSONAL INFO TAB -->
+                        <div class="tab-pane active" id="tab_1_3">
+                            <form id="doc_file" action="/upload-doc" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <label class="control-label">Upload Agency Document</label>
+                            <div class="custom-file form-group mb-4">
+                                <input type="file" class="custom-file-input" id="customFile" name="letter" accept="application/pdf,application/vnd.ms-excel" style="opacity: 1; padding: 4px 0px 0px 3px;">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Upload</button>
+                            </form>
+                            <label class="control-label">You already uploaded a document. You can download from the below button or if you want to upload a new version of the document so your previous document will be deleted.</label>
+                            <div>
+                            <a href="/download-doc" class="btn btn-success" style="color:white"><i class="fa fa-check-circle"></i> Download File</a>
+                            </div>
+                        </div>
+                        <!-- END PERSONAL INFO TAB -->
+                    </div>
                 </div>
             </div>
         </div>

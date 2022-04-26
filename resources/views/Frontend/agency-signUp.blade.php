@@ -29,7 +29,7 @@
 
       <button id="member" class="ag_member mr-3" style="color: #8695A1;">Member</button>
       <button id="agency" class="ag_agency" style="color: #ffffff; background: rgb(0,180,162);">Agency</button>
-      <form class="form-container agency-section mt-3 mb-5" method="get" action="/agency-signUp">
+      <form class="form-container agency-section mt-3 mb-5" method="POST" action="/agency-signUp" enctype="multipart/form-data">
 
         @csrf
         <input type="hidden" name="super_user" value="0" />
@@ -87,8 +87,8 @@
 
         </section>
         <div class="custom-file form-group mb-4">
-          <input type="file" class="custom-file-input" id="customFile" style="opacity: 1; padding: 4px 0px 0px 3px;">
-          <label class="custom-file-label" for="customFile" name="document" accept="application/pdf,application/vnd.ms-excel">Choose file</label>
+          <input type="file" class="custom-file-input" id="customFile" name="letter" accept="application/pdf,application/vnd.ms-excel" style="opacity: 1; padding: 4px 0px 0px 3px;">
+          <label class="custom-file-label" for="customFile" >Choose file</label>
         </div>
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input is-invalid" value="" id="exampleCheck1" required>
