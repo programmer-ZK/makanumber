@@ -25,12 +25,12 @@ $packages =  DB::table('re_packages')
     </ul>
   </div>
   @endif
-  <h1 class="mt-5">My profile</h1>
+  <h1 class="mt-5" style="font-family: 'Montserrat', sans-serif !important;">My profile</h1>
 
   <!-- End Navbar -->
 
-  <ul class="nav mb-3 pills-margin" id="pills-tab" role="tablist">
-    <li class="nav-item">
+  <ul class="nav mb-3 pills-margin" id="pills-tab" role="tablist" style="font-family: 'Montserrat', sans-serif !important;">
+    <li class="nav-item" >
       <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile Details</a>
     </li>
 
@@ -61,7 +61,7 @@ $packages =  DB::table('re_packages')
             @else
             <img src="/frontend-images/profile-pic.jpg" style="width:212px; height:212px; border-radius: 5px;" alt="profile-pic" />
             @endif
-            <input class="mt-3" type="file" name="profile_pic" />
+            <input class="mt-3" type="file" name="profile_pic" required />
             <button class="btn btn-primary upload-btn" type="submit">Upload New</button>
           </form>
           <form action="/delete-dp/{{Auth::user()->id}}" method="post">
@@ -75,12 +75,14 @@ $packages =  DB::table('re_packages')
           <h5>Profile Details</h5>
           <form action="/edit-profile/{{Auth::user()->id}}" method="get">
             <div class="row" style="color:grey;">
-              <div class="col-sm-6">
+              <div class="col-sm-10">
                 <label class="form-label">Name</label><br />
                 <input type="text" class="form-control" placeholder="John Smith" name="name" value="{{Auth::user()->username}}" />
               </div>
 
-              <div class="col-sm-6">
+            </div>
+            <div class="row mt-5" style="color:grey;">
+              <div class="col-sm-10">
                 <label class="form-label">Email</label><br />
                 <input type="email" class="form-control" placeholder="username@gmail.com" name="email" value="{{Auth::user()->email}}" />
               </div>
@@ -88,14 +90,9 @@ $packages =  DB::table('re_packages')
             </div>
 
             <div class="row mt-5" style="color:grey;">
-              <div class="col-sm-6">
+              <div class="col-sm-10">
                 <label class="form-label">Phone(Optional)</label><br />
-                <input type="text" class="form-control" placeholder="+97 05 08 44 77 76" name="phone" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label">Addrress</label><br />
-                <input type="text" class="form-control" placeholder="address" name="address" />
+                <input type="text" class="form-control" placeholder="+97 05 08 44 77 76" name="phone" value="{{Auth::user()->phone}}" />
               </div>
 
             </div>
@@ -114,10 +111,10 @@ $packages =  DB::table('re_packages')
 
         </div>
 
-
       </div>
 
-      <div class="col-sm-3 change-pw">
+
+      <div class="col-sm-4 change-pw">
         <h5>Change Password</h5>
         <form action="/change-password/{{Auth::user()->id}} " method="get">
           @csrf
