@@ -90,7 +90,7 @@ $cities = DB::table('cities')
 
         <div class=" input-group input border-0">
           <select class="custom-select " id="areaFrom" name="areaFrom" style="color:grey;" >
-            <option value="" selected disabled>Min Area(Sq.ft) </option>
+            <option value="" selected disabled>Min</option>
             <option value="100">100 Sq.ft</option>
             <option value="200">200 Sq.ft</option>
             <option value="300">300 Sq.ft</option>
@@ -111,15 +111,9 @@ $cities = DB::table('cities')
             <option value="9000">9,000 Sq.ft</option>
             <option value="10000">10,000 Sq.ft</option>
           </select>
-        </div>
-
-      </div>
-
-      <div class="col-sm" style="padding-left:0px !important">
-
-        <div class="input-group input border-0">
+          <span style="padding: 7px; color: grey; background: #FFFFFF;">Area</span>
           <select class="custom-select " id="areaTo" name="areaTo" style="color:grey;" >
-            <option value="" selected disabled>Max Area(Sq.ft)</option>
+            <option value="" selected disabled>Max</option>
             <option value="100">100 Sq.ft</option>
             <option value="200">200 Sq.ft</option>
             <option value="300">300 Sq.ft</option>
@@ -141,14 +135,13 @@ $cities = DB::table('cities')
             <option value="10000">10,000 Sq.ft</option>
           </select>
         </div>
-      </div>
 
+      </div>
 
       <div class="col-sm fromPrice" style="padding-left:0px !important">
-
         <div class=" input-group input border-0">
-          <select class="custom-select" id="priceFrom" name="priceFrom" style="color:grey;" >
-            <option value="" selected disabled>Min Price</option>
+          <select class="custom-select" id="priceFrom" name="priceFrom" style="color:grey; border-right: none !important;" >
+            <option value="" selected disabled>Min</option>
             <option value="500">500</option>
             <option value="1000">1,000</option>
             <option value="2000">2,000</option>
@@ -196,15 +189,9 @@ $cities = DB::table('cities')
             <option value="80000000">80,000,000</option>
             <option value="90000000">90,000,000</option>
           </select>
-        </div>
-
-      </div>
-
-      <div class="col-sm toPrice" style="padding-left:0px !important">
-
-        <div class=" input-group input border-0 ">
-          <select class="custom-select" id="priceTo" name="priceTo" style="color:grey;" >
-            <option value="" selected disabled>Max Price</option>
+          <span style="padding: 7px; color: grey; background: #FFFFFF;">Price</span>
+          <select class="custom-select" id="priceTo" name="priceTo" style="color:grey; border-left: none !important" >
+            <option value="" selected disabled>Max</option>
             <option value="500">500</option>
             <option value="1000">1,000</option>
             <option value="2000">2,000</option>

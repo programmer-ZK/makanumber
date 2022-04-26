@@ -53,7 +53,6 @@ Route::get('/edit-profile/{id}', 'App\Http\Controllers\UserController@editProfil
 Route::get('/change-password/{id}', 'App\Http\Controllers\UserController@changePassword');
 
 // Profile Pic
-
 Route::post('/profile-pic/{id}', 'App\Http\Controllers\UserController@profilePic');
 Route::delete('/delete-dp/{id}', 'App\Http\Controllers\UserController@deleteDp');
 

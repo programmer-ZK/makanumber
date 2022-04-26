@@ -217,8 +217,7 @@ $user_role_id =  DB::table('role_users')->where('user_id', '=', $user_id)->value
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
 
-
-
+            @if (Auth::user())
             @if($user_role_id != 3)
             <a class="dropdown-item" href="/admin"> Dashboard</a>
             @endif
@@ -227,6 +226,7 @@ $user_role_id =  DB::table('role_users')->where('user_id', '=', $user_id)->value
             <a class="dropdown-item" href="/my-profile" class="btn-logout"><i class="fas fa-user"></i> My Profile </a>
             @else
             <a class="dropdown-item" href="/admin/system/users/profile/{{Auth::user()->id}}" class="btn-logout"><i class="fas fa-user"></i> My Profile </a>
+            @endif
             @endif
 
             <a class="dropdown-item" href="{{ route('access.logout') }}" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
