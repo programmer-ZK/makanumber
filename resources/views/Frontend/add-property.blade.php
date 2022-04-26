@@ -298,7 +298,7 @@ $propertyTypes = DB::table('re_categories')
         <!--Container Div-->
       </div>
 
-      <div class="container-fluid mb-5" style="background-color: #00B4A2; height: 48px;>
+      <div class="container-fluid mb-5" style="background-color: #00B4A2; height: 48px;">
         <p class="green-line">ADD IMAGES AND VIDEOS</p>
         </div>
       <div class="container-fluid mb-5">
