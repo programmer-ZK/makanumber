@@ -15,7 +15,7 @@ use Carbon\Carbon;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<div class=" w-100">
+<div class="w-100">
   @include('layouts.property_search_form')
 </div>
 
@@ -28,23 +28,23 @@ if ($property->type == 'sale') {
 }
 ?>
 
-<section class="border mt-2 mb-4 pt-2 pb-2" style="border-radius:3px;font-family: 'Montserrat', sans-serif !important; margin: 0px 70px 0px 55px;
+  <section class="border mt-2 mb-4 pt-2 pb-2" style="border-radius:3px;font-family: 'Montserrat', sans-serif !important; margin: 0px 70px 0px 55px;
     padding: 18px;">
-  <section class="row pl-2">
-    <span>
-      <a href="/" style="color:black;">Home</a>
-      <i class="fa fa-angle-right"></i>
-      <span href="" style="color:black;">{{$props}} </span>
-      <i class="fa fa-angle-right"></i>
-      <span href="" style="color:black;">{{ $property->city_name }} </span>
-      <i class="fa fa-angle-right"></i>
-      <a href="#"> <span style="color:#00B4A2;">{{$property->name}}</span></a>
+    <section class="row pl-2">
+      <span>
+        <a href="/" style="color:black;">Home</a>
+        <i class="fa fa-angle-right"></i>
+        <span href="" style="color:black;">{{$props}} </span>
+        <i class="fa fa-angle-right"></i>
+        <span href="" style="color:black;">{{ $property->city_name }} </span>
+        <i class="fa fa-angle-right"></i>
+        <a href="#"> <span style="color:#00B4A2;">{{$property->name}}</span></a>
 
-    </span>
+      </span>
+
+    </section>
 
   </section>
-
-</section>
 
 
 <!--<main class="detailproject bg-white">-->

@@ -3,6 +3,8 @@
 $cities = DB::table('cities')
   ->select('*')->get();
 ?>
+<div class="ml-5" style="width: 100% !important;">
+
 <form action="/search-propeties" method="get">
   @csrf
 
@@ -144,7 +146,7 @@ $cities = DB::table('cities')
 
       <div class="col-sm fromPrice" style="padding-left:0px !important">
         <div class=" input-group input border-0">
-          <select class="custom-select" id="priceFrom" name="priceFrom" style="color:grey; border-right: none !important;">
+          <select class="custom-select" id="priceFrom" name="priceFrom" style="color:grey;">
             <option value="" selected disabled>Min</option>
             <option value="500" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 500) ? "selected" : "" ?>>500</option>
             <option value="1000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 1000) ? "selected" : "" ?>>1,000</option>
@@ -194,7 +196,7 @@ $cities = DB::table('cities')
             <option value="90000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 90000000) ? "selected" : "" ?>>90,000,000</option>
           </select>
           <span style="padding: 7px; color: grey; background: #FFFFFF;">Price</span>
-          <select class="custom-select" id="priceTo" name="priceTo" style="color:grey; border-left: none !important">
+          <select class="custom-select" id="priceTo" name="priceTo" style="color:grey;">
             <option value="" selected disabled>Max</option>
             <option value="500" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 500) ? "selected" : "" ?>>500</option>
             <option value="1000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 1000) ? "selected" : "" ?>>1,000</option>
@@ -253,3 +255,5 @@ $cities = DB::table('cities')
     </div>
   </div>
 </form>
+
+</div>
