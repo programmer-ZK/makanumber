@@ -4,7 +4,11 @@
 @section('title', 'Search Property | Makanumber')
 
 @section('content')
-@include('layouts.property_search_form')
+
+
+<div class="w-100">
+  @include('layouts.property_search_form')
+</div>
 
 <?php
 $type = "";
@@ -249,4 +253,5 @@ if ($propPurpose == "renting") {
   </div>
 
 </div>
+
 @stop
