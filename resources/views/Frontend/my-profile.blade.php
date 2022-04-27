@@ -127,17 +127,17 @@ $packages =  DB::table('re_packages')
           <div class="row" style="color:grey">
             <div class="col-sm-12">
               <label class="form-label">Old Password</label><br />
-              <input type="password" class="form-control" name="old_password" />
+              <input type="password" class="form-control" name="old_password" required />
             </div>
 
             <div class="col-sm-12 mt-5">
               <label class="form-label">New Password</label><br />
-              <input type="password" class="form-control" name="new_password" />
+              <input type="password" class="form-control" name="new_password"  required/>
             </div>
 
             <div class="col-sm-12 mt-5">
               <label class="form-label">Confirm Password</label><br />
-              <input type="password" class="form-control" name="confirm_password" />
+              <input type="password" class="form-control" name="confirm_password" required />
             </div>
 
             <div class="col-sm-12 mt-5">
