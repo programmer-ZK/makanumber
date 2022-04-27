@@ -15,7 +15,10 @@ use Carbon\Carbon;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-@include('layouts.property_search_form')
+<div class="ml-5 w-100">
+  @include('layouts.property_search_form')
+</div>
+
 
 <?php
 if ($property->type == 'sale') {
@@ -75,7 +78,7 @@ if ($property->type == 'sale') {
         <div class="col-sm-1 py-1">
           <i class="fa fa-home" style="font-size:40px; color:grey;"></i>
         </div>
-        <div class="col-sm-2 text-center">
+        <div class="col-sm-2">
 
           <h5>{{ implode(', ', $property->categories()->pluck('name')->all()) }}</h5>
           <p>Type</p>
