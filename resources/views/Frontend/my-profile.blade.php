@@ -5,10 +5,16 @@
 
 @section('content')
 <?php
+if (!Auth::user()) {
+  // header('Location:  ' . $_SERVER['HTTP_HOST'] . '');
+  echo "<script>window.location.href = '/';</script>";
+}
+
 $packages =  DB::table('re_packages')
   ->select('*')
   ->get();
 ?>
+
 
 <div class="container center">
   @if(Session::has('success'))
@@ -30,7 +36,7 @@ $packages =  DB::table('re_packages')
   <!-- End Navbar -->
 
   <ul class="nav mb-3 pills-margin" id="pills-tab" role="tablist" style="font-family: 'Montserrat', sans-serif !important;">
-    <li class="nav-item" >
+    <li class="nav-item">
       <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile Details</a>
     </li>
 
