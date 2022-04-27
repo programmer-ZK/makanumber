@@ -254,7 +254,7 @@ $pkg = [];
         <div class="text-center" id="slogan">
           <h1>Trusted Place To Find Your Dream Home</h1>
         </div>
-        <div class="ml-5">
+        <div class="ml-4">
           @include('layouts.property_search_form')
         </div>
       </div>
