@@ -10,7 +10,7 @@ use Carbon\Carbon;
     margin-top: 0px !important;
   }
 </style>
- 
+
 {!! Theme::header() !!}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -113,52 +113,50 @@ if ($property->type == 'sale') {
     </div>
     <div class="col-md-4 p-5 column " style="font-family: 'Montserrat', sans-serif !important; ">
 
-<div class="boxright p-3">
+      <div class="boxright p-3">
 
-  @foreach($users as $user)
-  @if($user)
-  <div class="row rowm10 itemagent">
-    <div class="col-lg-4 colm10">
+        @foreach($users as $user)
+        @if($user)
+        <div class="row rowm10 itemagent">
+          <div class="col-lg-4 colm10">
 
-      @if ($user->username)
-      <a href="">
-        @if ($user->avatar_id)
-        <img src="{{ $user->avatar_url }}" alt="" class="img-thumbnail" style="border-radius:50%; height:80px; object-fit: cover; width:80px; border:1px solid #f5f5f5;">
+            @if ($user->username)
+            <a href="">
+              @if ($user->avatar_id)
+              <img src="{{asset('public/storage/users/'.$user['avatar_id'])}}" alt="" class="img-thumbnail" style="border-radius:50%; height:80px; object-fit: cover; width:80px; border:1px solid #f5f5f5;">
+              @else
+              <span><i class="fa fa-user" aria-hidden="true" style="font-size:48px; padding:10px; color:rgb(0, 180, 162); border-radius:50%;object-fit: cover; border:1px solid green !important;"></i></span>
+              @endif
+            </a>
+            @else
+            <p></p>
+            @endif
+          </div>
+          <div class="col-lg-8 colm10">
+            <div class="info mt-2">
+              <p style="font-size:18px; font-weight:bold;">
+                {{$user->first_name}} {{$user->last_name}}
+              </p>
+            </div>
+          </div>
+        </div>
+
         @else
+
         <span><i class="fa fa-user" aria-hidden="true" style="font-size:48px; padding:10px; color:rgb(0, 180, 162); border-radius:50%;object-fit: cover; border:1px solid green !important;"></i></span>
+
         @endif
-      </a>
-      @else
-      <p></p>
-      @endif
-    </div>
-    <div class="col-lg-8 colm10">
-      <div class="info mt-2">
-        <p style="font-size:18px; font-weight:bold;">
-          {{$user->first_name}} {{$user->last_name}} 
-        {{ $user->avatar_url }}
+        <hr>
 
-        </p>
+        <a href="tel:{{$user->phone}}" style="color:white;"><button class="btn btn-dark mr-3" style="width:130px;"><i class="fa fa-phone" aria-hidden="true"></i> Call Now </button> </a>
+        <a href="https://api.whatsapp.com/send?phone={{$user->phone}}" style="color:white;"> <button class="btn btn-success" style="width:130px; float-left;"> <i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</button></a>
+
+
+        @endforeach
       </div>
+
+
     </div>
-  </div>
-
-  @else
-
-  <span><i class="fa fa-user" aria-hidden="true" style="font-size:48px; padding:10px; color:rgb(0, 180, 162); border-radius:50%;object-fit: cover; border:1px solid green !important;"></i></span>
-
-  @endif
-  <hr>
-
-  <a href="tel:{{$user->phone}}" style="color:white;"><button class="btn btn-dark mr-3" style="width:130px;"><i class="fa fa-phone" aria-hidden="true"></i> Call Now </button> </a>
-  <a href="https://api.whatsapp.com/send?phone={{$user->phone}}" style="color:white;"> <button class="btn btn-success" style="width:130px; float-left;"> <i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</button></a>
-
-
-  @endforeach
-</div>
-
-
-</div>
   </div>
 
 </div>
