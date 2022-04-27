@@ -146,102 +146,102 @@ $cities = DB::table('cities')
         <div class=" input-group input border-0">
           <select class="custom-select" id="priceFrom" name="priceFrom" style="color:grey; border-right: none !important;">
             <option value="" selected disabled>Min</option>
-            <option value="500" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 500) ? "selected" : "" ?>>500</option>
-            <option value="1000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 1000) ? "selected" : "" ?>>1,000</option>
-            <option value="2000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 2000) ? "selected" : "" ?>>2,000</option>
-            <option value="3000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 3000) ? "selected" : "" ?>>3,000</option>
-            <option value="4000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 4000) ? "selected" : "" ?>>4,000</option>
-            <option value="5000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 5000) ? "selected" : "" ?>>5,000</option>
-            <option value="6000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 6000) ? "selected" : "" ?>>6,000</option>
-            <option value="7000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 7000) ? "selected" : "" ?>>7,000</option>
-            <option value="8000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 8000) ? "selected" : "" ?>>8,000</option>
-            <option value="9000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 9000) ? "selected" : "" ?>>9,000</option>
-            <option value="10000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 10000) ? "selected" : "" ?>>10,000</option>
-            <option value="20000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 20000) ? "selected" : "" ?>>20,000</option>
-            <option value="30000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 30000) ? "selected" : "" ?>>30,000</option>
-            <option value="40000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 40000) ? "selected" : "" ?>>40,000</option>
-            <option value="50000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 50000) ? "selected" : "" ?>>50,000</option>
-            <option value="60000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 60000) ? "selected" : "" ?>>60,000</option>
-            <option value="70000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 70000) ? "selected" : "" ?>>70,000</option>
-            <option value="80000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 80000) ? "selected" : "" ?>>80,000</option>
-            <option value="90000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 90000) ? "selected" : "" ?>>90,000</option>
-            <option value="100000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 100000) ? "selected" : "" ?>>100,000</option>
-            <option value="200000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 200000) ? "selected" : "" ?>>200,000</option>
-            <option value="300000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 300000) ? "selected" : "" ?>>300,000</option>
-            <option value="400000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 400000) ? "selected" : "" ?>>400,000</option>
-            <option value="500000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 500000) ? "selected" : "" ?>>500,000</option>
-            <option value="600000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 600000) ? "selected" : "" ?>>600,000</option>
-            <option value="700000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 700000) ? "selected" : "" ?>>700,000</option>
-            <option value="800000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 800000) ? "selected" : "" ?>>800,000</option>
-            <option value="900000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 900000) ? "selected" : "" ?>>900,000</option>
-            <option value="1000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 1000000) ? "selected" : "" ?>>1,000,000</option>
-            <option value="2000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 2000000) ? "selected" : "" ?>>2,000,000</option>
-            <option value="3000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 3000000) ? "selected" : "" ?>>3,000,000</option>
-            <option value="4000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 4000000) ? "selected" : "" ?>>4,000,000</option>
-            <option value="5000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 5000000) ? "selected" : "" ?>>5,000,000</option>
-            <option value="6000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 6000000) ? "selected" : "" ?>>6,000,000</option>
-            <option value="7000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 7000000) ? "selected" : "" ?>>7,000,000</option>
-            <option value="8000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 8000000) ? "selected" : "" ?>>8,000,000</option>
-            <option value="9000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 9000000) ? "selected" : "" ?>>9,000,000</option>
-            <option value="10000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 10000000) ? "selected" : "" ?>>10,000,000</option>
-            <option value="20000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 20000000) ? "selected" : "" ?>>20,000,000</option>
-            <option value="30000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 30000000) ? "selected" : "" ?>>30,000,000</option>
-            <option value="40000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 40000000) ? "selected" : "" ?>>40,000,000</option>
-            <option value="50000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 50000000) ? "selected" : "" ?>>50,000,000</option>
-            <option value="60000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 60000000) ? "selected" : "" ?>>60,000,000</option>
-            <option value="70000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 70000000) ? "selected" : "" ?>>70,000,000</option>
-            <option value="80000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 80000000) ? "selected" : "" ?>>80,000,000</option>
-            <option value="90000000" <?= ( isset($_GET['priceFrom'])&&$_GET['priceFrom'] == 90000000) ? "selected" : "" ?>>90,000,000</option>
+            <option value="500" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 500) ? "selected" : "" ?>>500</option>
+            <option value="1000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 1000) ? "selected" : "" ?>>1,000</option>
+            <option value="2000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 2000) ? "selected" : "" ?>>2,000</option>
+            <option value="3000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 3000) ? "selected" : "" ?>>3,000</option>
+            <option value="4000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 4000) ? "selected" : "" ?>>4,000</option>
+            <option value="5000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 5000) ? "selected" : "" ?>>5,000</option>
+            <option value="6000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 6000) ? "selected" : "" ?>>6,000</option>
+            <option value="7000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 7000) ? "selected" : "" ?>>7,000</option>
+            <option value="8000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 8000) ? "selected" : "" ?>>8,000</option>
+            <option value="9000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 9000) ? "selected" : "" ?>>9,000</option>
+            <option value="10000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 10000) ? "selected" : "" ?>>10,000</option>
+            <option value="20000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 20000) ? "selected" : "" ?>>20,000</option>
+            <option value="30000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 30000) ? "selected" : "" ?>>30,000</option>
+            <option value="40000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 40000) ? "selected" : "" ?>>40,000</option>
+            <option value="50000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 50000) ? "selected" : "" ?>>50,000</option>
+            <option value="60000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 60000) ? "selected" : "" ?>>60,000</option>
+            <option value="70000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 70000) ? "selected" : "" ?>>70,000</option>
+            <option value="80000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 80000) ? "selected" : "" ?>>80,000</option>
+            <option value="90000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 90000) ? "selected" : "" ?>>90,000</option>
+            <option value="100000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 100000) ? "selected" : "" ?>>100,000</option>
+            <option value="200000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 200000) ? "selected" : "" ?>>200,000</option>
+            <option value="300000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 300000) ? "selected" : "" ?>>300,000</option>
+            <option value="400000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 400000) ? "selected" : "" ?>>400,000</option>
+            <option value="500000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 500000) ? "selected" : "" ?>>500,000</option>
+            <option value="600000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 600000) ? "selected" : "" ?>>600,000</option>
+            <option value="700000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 700000) ? "selected" : "" ?>>700,000</option>
+            <option value="800000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 800000) ? "selected" : "" ?>>800,000</option>
+            <option value="900000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 900000) ? "selected" : "" ?>>900,000</option>
+            <option value="1000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 1000000) ? "selected" : "" ?>>1,000,000</option>
+            <option value="2000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 2000000) ? "selected" : "" ?>>2,000,000</option>
+            <option value="3000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 3000000) ? "selected" : "" ?>>3,000,000</option>
+            <option value="4000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 4000000) ? "selected" : "" ?>>4,000,000</option>
+            <option value="5000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 5000000) ? "selected" : "" ?>>5,000,000</option>
+            <option value="6000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 6000000) ? "selected" : "" ?>>6,000,000</option>
+            <option value="7000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 7000000) ? "selected" : "" ?>>7,000,000</option>
+            <option value="8000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 8000000) ? "selected" : "" ?>>8,000,000</option>
+            <option value="9000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 9000000) ? "selected" : "" ?>>9,000,000</option>
+            <option value="10000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 10000000) ? "selected" : "" ?>>10,000,000</option>
+            <option value="20000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 20000000) ? "selected" : "" ?>>20,000,000</option>
+            <option value="30000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 30000000) ? "selected" : "" ?>>30,000,000</option>
+            <option value="40000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 40000000) ? "selected" : "" ?>>40,000,000</option>
+            <option value="50000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 50000000) ? "selected" : "" ?>>50,000,000</option>
+            <option value="60000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 60000000) ? "selected" : "" ?>>60,000,000</option>
+            <option value="70000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 70000000) ? "selected" : "" ?>>70,000,000</option>
+            <option value="80000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 80000000) ? "selected" : "" ?>>80,000,000</option>
+            <option value="90000000" <?= (isset($_GET['priceFrom']) && $_GET['priceFrom'] == 90000000) ? "selected" : "" ?>>90,000,000</option>
           </select>
           <span style="padding: 7px; color: grey; background: #FFFFFF;">Price</span>
           <select class="custom-select" id="priceTo" name="priceTo" style="color:grey; border-left: none !important">
             <option value="" selected disabled>Max</option>
-            <option value="500" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 500) ? "selected" : "" ?>>500</option>
-            <option value="1000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 1000) ? "selected" : "" ?>>1,000</option>
-            <option value="2000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 2000) ? "selected" : "" ?>>2,000</option>
-            <option value="3000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 3000) ? "selected" : "" ?>>3,000</option>
-            <option value="4000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 4000) ? "selected" : "" ?>>4,000</option>
-            <option value="5000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 5000) ? "selected" : "" ?>>5,000</option>
-            <option value="6000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 6000) ? "selected" : "" ?>>6,000</option>
-            <option value="7000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 7000) ? "selected" : "" ?>>7,000</option>
-            <option value="8000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 8000) ? "selected" : "" ?>>8,000</option>
-            <option value="9000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 9000) ? "selected" : "" ?>>9,000</option>
-            <option value="10000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 10000) ? "selected" : "" ?>>10,000</option>
-            <option value="20000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 20000) ? "selected" : "" ?>>20,000</option>
-            <option value="30000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 30000) ? "selected" : "" ?>>30,000</option>
-            <option value="40000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 40000) ? "selected" : "" ?>>40,000</option>
-            <option value="50000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 50000) ? "selected" : "" ?>>50,000</option>
-            <option value="60000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 60000) ? "selected" : "" ?>>60,000</option>
-            <option value="70000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 70000) ? "selected" : "" ?>>70,000</option>
-            <option value="80000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 80000) ? "selected" : "" ?>>80,000</option>
-            <option value="90000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 90000) ? "selected" : "" ?>>90,000</option>
-            <option value="100000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 100000) ? "selected" : "" ?>>100,000</option>
-            <option value="200000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 200000) ? "selected" : "" ?>>200,000</option>
-            <option value="300000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 300000) ? "selected" : "" ?>>300,000</option>
-            <option value="400000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 400000) ? "selected" : "" ?>>400,000</option>
-            <option value="500000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 500000) ? "selected" : "" ?>>500,000</option>
-            <option value="600000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 600000) ? "selected" : "" ?>>600,000</option>
-            <option value="700000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 700000) ? "selected" : "" ?>>700,000</option>
-            <option value="800000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 800000) ? "selected" : "" ?>>800,000</option>
-            <option value="900000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 900000) ? "selected" : "" ?>>900,000</option>
-            <option value="1000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 1000000) ? "selected" : "" ?>>1,000,000</option>
-            <option value="2000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 2000000) ? "selected" : "" ?>>2,000,000</option>
-            <option value="3000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 3000000) ? "selected" : "" ?>>3,000,000</option>
-            <option value="4000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 4000000) ? "selected" : "" ?>>4,000,000</option>
-            <option value="5000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 5000000) ? "selected" : "" ?>>5,000,000</option>
-            <option value="6000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 6000000) ? "selected" : "" ?>>6,000,000</option>
-            <option value="7000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 7000000) ? "selected" : "" ?>>7,000,000</option>
-            <option value="8000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 8000000) ? "selected" : "" ?>>8,000,000</option>
-            <option value="9000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 9000000) ? "selected" : "" ?>>9,000,000</option>
-            <option value="10000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 10000000) ? "selected" : "" ?>>10,000,000</option>
-            <option value="20000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 20000000) ? "selected" : "" ?>>20,000,000</option>
-            <option value="30000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 30000000) ? "selected" : "" ?>>30,000,000</option>
-            <option value="40000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 40000000) ? "selected" : "" ?>>40,000,000</option>
-            <option value="50000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 50000000) ? "selected" : "" ?>>50,000,000</option>
-            <option value="60000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 60000000) ? "selected" : "" ?>>60,000,000</option>
-            <option value="70000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 70000000) ? "selected" : "" ?>>70,000,000</option>
-            <option value="80000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 80000000) ? "selected" : "" ?>>80,000,000</option>
-            <option value="90000000" <?= (isset($_GET['priceTo'])&&$_GET['priceTo'] == 90000000) ? "selected" : "" ?>>90,000,000</option>
+            <option value="500" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 500) ? "selected" : "" ?>>500</option>
+            <option value="1000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 1000) ? "selected" : "" ?>>1,000</option>
+            <option value="2000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 2000) ? "selected" : "" ?>>2,000</option>
+            <option value="3000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 3000) ? "selected" : "" ?>>3,000</option>
+            <option value="4000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 4000) ? "selected" : "" ?>>4,000</option>
+            <option value="5000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 5000) ? "selected" : "" ?>>5,000</option>
+            <option value="6000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 6000) ? "selected" : "" ?>>6,000</option>
+            <option value="7000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 7000) ? "selected" : "" ?>>7,000</option>
+            <option value="8000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 8000) ? "selected" : "" ?>>8,000</option>
+            <option value="9000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 9000) ? "selected" : "" ?>>9,000</option>
+            <option value="10000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 10000) ? "selected" : "" ?>>10,000</option>
+            <option value="20000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 20000) ? "selected" : "" ?>>20,000</option>
+            <option value="30000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 30000) ? "selected" : "" ?>>30,000</option>
+            <option value="40000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 40000) ? "selected" : "" ?>>40,000</option>
+            <option value="50000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 50000) ? "selected" : "" ?>>50,000</option>
+            <option value="60000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 60000) ? "selected" : "" ?>>60,000</option>
+            <option value="70000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 70000) ? "selected" : "" ?>>70,000</option>
+            <option value="80000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 80000) ? "selected" : "" ?>>80,000</option>
+            <option value="90000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 90000) ? "selected" : "" ?>>90,000</option>
+            <option value="100000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 100000) ? "selected" : "" ?>>100,000</option>
+            <option value="200000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 200000) ? "selected" : "" ?>>200,000</option>
+            <option value="300000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 300000) ? "selected" : "" ?>>300,000</option>
+            <option value="400000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 400000) ? "selected" : "" ?>>400,000</option>
+            <option value="500000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 500000) ? "selected" : "" ?>>500,000</option>
+            <option value="600000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 600000) ? "selected" : "" ?>>600,000</option>
+            <option value="700000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 700000) ? "selected" : "" ?>>700,000</option>
+            <option value="800000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 800000) ? "selected" : "" ?>>800,000</option>
+            <option value="900000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 900000) ? "selected" : "" ?>>900,000</option>
+            <option value="1000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 1000000) ? "selected" : "" ?>>1,000,000</option>
+            <option value="2000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 2000000) ? "selected" : "" ?>>2,000,000</option>
+            <option value="3000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 3000000) ? "selected" : "" ?>>3,000,000</option>
+            <option value="4000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 4000000) ? "selected" : "" ?>>4,000,000</option>
+            <option value="5000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 5000000) ? "selected" : "" ?>>5,000,000</option>
+            <option value="6000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 6000000) ? "selected" : "" ?>>6,000,000</option>
+            <option value="7000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 7000000) ? "selected" : "" ?>>7,000,000</option>
+            <option value="8000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 8000000) ? "selected" : "" ?>>8,000,000</option>
+            <option value="9000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 9000000) ? "selected" : "" ?>>9,000,000</option>
+            <option value="10000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 10000000) ? "selected" : "" ?>>10,000,000</option>
+            <option value="20000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 20000000) ? "selected" : "" ?>>20,000,000</option>
+            <option value="30000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 30000000) ? "selected" : "" ?>>30,000,000</option>
+            <option value="40000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 40000000) ? "selected" : "" ?>>40,000,000</option>
+            <option value="50000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 50000000) ? "selected" : "" ?>>50,000,000</option>
+            <option value="60000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 60000000) ? "selected" : "" ?>>60,000,000</option>
+            <option value="70000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 70000000) ? "selected" : "" ?>>70,000,000</option>
+            <option value="80000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 80000000) ? "selected" : "" ?>>80,000,000</option>
+            <option value="90000000" <?= (isset($_GET['priceTo']) && $_GET['priceTo'] == 90000000) ? "selected" : "" ?>>90,000,000</option>
           </select>
         </div>
 
