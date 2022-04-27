@@ -24,7 +24,7 @@ class UserController extends Controller
     ]);
 
     $roles = DB::table('roles')->where("id", 2)->first();
-    
+
 
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
@@ -44,7 +44,7 @@ class UserController extends Controller
     $user->super_user = $request->super_user;
     $user->remember_token = $randomString;
     $user->permissions = $roles->permissions;
-   
+
 
     $ifEmailExists = DB::table('users')->where('email', $request->email)->value('email');
     if ($ifEmailExists == $request->email) {
@@ -85,10 +85,10 @@ class UserController extends Controller
           $message->from("noreply@makanumber.com", "Makanumber");
         });
 
-        if($request->hasFile('letter')){
+        if ($request->hasFile('letter')) {
           $documents = new Document;
           $image = $request->file('letter');
-  
+
           $name = time() . '.' . $image->getClientOriginalExtension();
           $destinationPath = public_path('/storage/documents');
           $image->move($destinationPath, $name);
@@ -99,7 +99,6 @@ class UserController extends Controller
 
           $user->documents = $documents->id;
           $user->save();
-
         }
         return redirect()->back()->with('success', 'Agency Created Successfully! An activation email has sent to your email, check to login, it maybe in your spams folder');
       } else {
@@ -181,7 +180,7 @@ class UserController extends Controller
 
   public function activation(Request $request, $token)
   {
-    
+
     $id = DB::table('users')->where('remember_token', '=', $token)->value('id');
     $activations_id = DB::table('activations')->where('user_id', '=', $id)->value('completed');
 
@@ -223,8 +222,9 @@ class UserController extends Controller
 
     $data = $request->all();
 
-    if (!Hash::check($data['old_password'], auth()->user()->password)) {
+    if (!Hash::check($request->old_password, auth()->user()->password)) {
       return redirect()->back()->with('danger', 'Old Password Incorrect');
+      exit();
     } else {
       $user = UserModel::find($id);
       $user->password = Hash::make($request->new_password);
@@ -260,37 +260,37 @@ class UserController extends Controller
 
   public function uploadDoc(Request $request)
   {
-    
-    if($request->hasFile('letter')){
-    $documents = new Document;
-    $documents->user_id = Auth::user()->id;
 
-    $doc = Document::where('user_id', Auth::user()->id)->first();
+    if ($request->hasFile('letter')) {
+      $documents = new Document;
+      $documents->user_id = Auth::user()->id;
+
+      $doc = Document::where('user_id', Auth::user()->id)->first();
 
 
-    $image = $request->file('letter');
+      $image = $request->file('letter');
 
-    $name = time() . '.' . $image->getClientOriginalExtension();
-    $destinationPath = public_path('/storage/documents');
-    $image->move($destinationPath, $name);
-    // dd($request);
-    $doc = Document::where('user_id', Auth::user()->id)->update(['letter' => $name]);
-    $documents->letter = $name;
-    if ($doc) {
-      $documents->update();
+      $name = time() . '.' . $image->getClientOriginalExtension();
+      $destinationPath = public_path('/storage/documents');
+      $image->move($destinationPath, $name);
+      // dd($request);
+      $doc = Document::where('user_id', Auth::user()->id)->update(['letter' => $name]);
+      $documents->letter = $name;
+      if ($doc) {
+        $documents->update();
+      } else {
+        $documents->save();
+      }
+
+      $get_document = Document::where('user_id', Auth::user()->id)->first();
+      $user = UserModel::where('id', Auth::user()->id)->first();
+      $user->documents = $get_document->id;
+      $user->save();
+
+      return back()->with('success', 'Documents Uploaded Successfully!');
     } else {
-      $documents->save();
+      return back()->with('error', 'Something went wrong');
     }
-    
-    $get_document = Document::where('user_id', Auth::user()->id)->first();
-    $user = UserModel::where('id', Auth::user()->id)->first();
-    $user->documents = $get_document->id;
-    $user->save();
-
-    return back()->with('success', 'Documents Uploaded Successfully!');
-  }else{
-    return back()->with('error', 'Something went wrong');
-  }
   }
 
 
@@ -355,9 +355,9 @@ class UserController extends Controller
   {
     $user = Auth::user()->documents;
     $document = Document::where("id", $user)->first();
-    $file = public_path().'/storage/documents/'.$document->letter;
+    $file = public_path() . '/storage/documents/' . $document->letter;
     return response()->make(file_get_contents($file), 200, [
-      'Content-Disposition' => 'attachment; filename="' . $document->letter .'"',
+      'Content-Disposition' => 'attachment; filename="' . $document->letter . '"',
     ]);
   }
 }
