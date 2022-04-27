@@ -121,13 +121,7 @@ if ($property->type == 'sale') {
           <div class="col-lg-4 colm10">
 
             @if ($user->username)
-            <a href="">
-              @if ($user->avatar_id)
-              <img src="{{asset('public/storage/users/'.$user['avatar_id'])}}" alt="" class="img-thumbnail" style="border-radius:50%; height:80px; object-fit: cover; width:80px; border:1px solid #f5f5f5;">
-              @else
-              <span><i class="fa fa-user" aria-hidden="true" style="font-size:48px; padding:10px; color:rgb(0, 180, 162); border-radius:50%;object-fit: cover; border:1px solid green !important;"></i></span>
-              @endif
-            </a>
+           
             @else
             <p></p>
             @endif
