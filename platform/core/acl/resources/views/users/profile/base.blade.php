@@ -141,10 +141,16 @@
                             </div>
                             <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Upload</button>
                             </form>
+                            @php
+                            $user = Auth::user()->documents;
+                            $document = App\Models\Document::where("id", $user)->first();
+                            @endphp
+                            @if($document)
                             <label class="control-label">You already uploaded a document. You can download from the below button or if you want to upload a new version of the document so your previous document will be deleted.</label>
                             <div>
                             <a href="/download-doc" class="btn btn-success" style="color:white"><i class="fa fa-check-circle"></i> Download File</a>
                             </div>
+                            @endif
                         </div>
                         <!-- END PERSONAL INFO TAB -->
                     </div>

@@ -11,6 +11,7 @@ use Session;
 use Mail;
 use DB;
 use Carbon\Carbon;
+use RvMedia;
 
 class UserController extends Controller
 {
@@ -260,6 +261,7 @@ class UserController extends Controller
 
   public function uploadDoc(Request $request)
   {
+    
     if($request->hasFile('letter')){
     $documents = new Document;
     $documents->user_id = Auth::user()->id;
@@ -280,6 +282,11 @@ class UserController extends Controller
     } else {
       $documents->save();
     }
+    
+    $get_document = Document::where('user_id', Auth::user()->id)->first();
+    $user = UserModel::where('id', Auth::user()->id)->first();
+    $user->documents = $get_document->id;
+    $user->save();
 
     return back()->with('success', 'Documents Uploaded Successfully!');
   }else{
@@ -347,19 +354,11 @@ class UserController extends Controller
 
   public function downloadDoc()
   {
-    
-    return response()->json(phpinfo());
-  //   ini_set('allow_url_fopen',1);
-  //   $user = Auth::user()->documents;
-  //   $document = Document::where("id", $user)->first();
-  //   $file = public_path().'/storage/bahria-enclave-entrance-150x150.jpg';
-  //   $headers = [
-  //     'Access-Control-Allow-Origin' => '*',
-  //     'Access-Control-Allow-Methods' => 'GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS',
-  //     'Access-Control-Allow-Headers' => '*',
-  // ];
- 
-  //  return response()->download($file,'fole.pdf',$headers);
-
+    $user = Auth::user()->documents;
+    $document = Document::where("id", $user)->first();
+    $file = public_path().'/storage/documents/'.$document->letter;
+    return response()->make(file_get_contents($file), 200, [
+      'Content-Disposition' => 'attachment; filename="' . $document->letter .'"',
+    ]);
   }
 }

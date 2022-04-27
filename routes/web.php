@@ -53,6 +53,7 @@ Route::get('/edit-profile/{id}', 'App\Http\Controllers\UserController@editProfil
 Route::get('/change-password/{id}', 'App\Http\Controllers\UserController@changePassword');
 
 // Profile Pic
+
 Route::post('/profile-pic/{id}', 'App\Http\Controllers\UserController@profilePic');
 Route::delete('/delete-dp/{id}', 'App\Http\Controllers\UserController@deleteDp');
 
@@ -103,6 +104,12 @@ Route::post('package', 'App\Http\Controllers\SubscriptionController@package');
 
 Route::post('/search', 'App\Http\Controllers\PropertyController@singleProperty');
 
+Route::get('/clear', function() {
 
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    return "Cleared!";
+ 
+ });
  
 
