@@ -15,7 +15,7 @@ use Carbon\Carbon;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<div class="ml-5 w-100">
+<div class=" w-100">
   @include('layouts.property_search_form')
 </div>
 
