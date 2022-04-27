@@ -118,18 +118,14 @@ if ($property->type == 'sale') {
         @foreach($users as $user)
         @if($user)
         <div class="row rowm10 itemagent">
-          <div class="col-lg-4 colm10">
-
-            @if ($user->username)
-           
-            @else
-            <p></p>
-            @endif
-          </div>
           <div class="col-lg-8 colm10">
             <div class="info mt-2">
-              <p style="font-size:18px; font-weight:bold;">
+              <p style="font-size:18px; font-weight:bold; padding-left: 10px;">
                 {{$user->first_name}} {{$user->last_name}}
+                <br>
+                <span style="font-size: 14px; color: grey;">
+                  {{$user->username}}
+                </span>
               </p>
             </div>
           </div>
@@ -143,7 +139,8 @@ if ($property->type == 'sale') {
         <hr>
 
         <a href="tel:{{$user->phone}}" style="color:white;"><button class="btn btn-dark mr-3" style="width:130px;"><i class="fa fa-phone" aria-hidden="true"></i> Call Now </button> </a>
-        <a href="https://api.whatsapp.com/send?phone={{$user->phone}}" style="color:white;"> <button class="btn btn-success" style="width:130px; float-left;"> <i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</button></a>
+
+        <a href="https://api.whatsapp.com/send?phone={{$user->phone}}" style="color:white;"> <button class="btn btn-success mr-2" style="width:130px; float: left;"> <i class="fab fa-whatsapp" aria-hidden="true"></i> Whatsapp</button></a>
 
 
         @endforeach
