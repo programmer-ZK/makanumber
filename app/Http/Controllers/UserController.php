@@ -229,7 +229,7 @@ class UserController extends Controller
       $user = UserModel::find($id);
       $user->password = Hash::make($request->new_password);
       $user->update();
-      return redirect()->back()->with('success', 'Passowrd Updated Successfully');
+      return redirect()->back()->with('success', 'Password Updated Successfully');
     }
   }
 
