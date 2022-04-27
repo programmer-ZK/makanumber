@@ -222,9 +222,8 @@ class UserController extends Controller
 
     $data = $request->all();
 
-    if (!Hash::check($request->old_password, auth()->user()->password)) {
+    if (Hash::check($request->old_password, auth()->user()->password) == false) {
       return redirect()->back()->with('danger', 'Old Password Incorrect');
-      exit();
     } else {
       $user = UserModel::find($id);
       $user->password = Hash::make($request->new_password);
