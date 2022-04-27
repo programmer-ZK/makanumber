@@ -124,7 +124,6 @@ if ($property->type == 'sale') {
       <a href="">
         @if ($user->avatar_id)
         <img src="{{ $user->avatar_url }}" alt="" class="img-thumbnail" style="border-radius:50%; height:80px; object-fit: cover; width:80px; border:1px solid #f5f5f5;">
-        {{ $user->avatar_url }}
         @else
         <span><i class="fa fa-user" aria-hidden="true" style="font-size:48px; padding:10px; color:rgb(0, 180, 162); border-radius:50%;object-fit: cover; border:1px solid green !important;"></i></span>
         @endif
@@ -137,6 +136,8 @@ if ($property->type == 'sale') {
       <div class="info mt-2">
         <p style="font-size:18px; font-weight:bold;">
           {{$user->first_name}} {{$user->last_name}} 
+        {{ $user->avatar_url }}
+
         </p>
       </div>
     </div>
