@@ -19,6 +19,7 @@ class UpdateProfileRequest extends Request
             'first_name' => 'required|max:60|min:2',
             'last_name'  => 'required|max:60|min:2',
             'email'      => 'required|max:60|min:6|email',
+            'phone'      => 'required|max:20|min:11',
         ];
     }
 }

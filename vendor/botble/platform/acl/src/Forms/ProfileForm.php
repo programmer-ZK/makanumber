@@ -61,6 +61,17 @@ class ProfileForm extends FormAbstract
                     'class' => $this->formHelper->getConfig('defaults.wrapper_class') . ' col-md-6',
                 ],
             ])
+            ->add('phone', 'text', [
+                'label'      => trans('core/acl::users.info.mobile_number'),
+                'label_attr' => ['class' => 'control-label required'],
+                'attr'       => [
+                    'placeholder'  => trans('core/acl::users.info.mobile_number'),
+                    'data-counter' => 60,
+                ],
+                'wrapper'    => [
+                    'class' => $this->formHelper->getConfig('defaults.wrapper_class') . ' col-md-6',
+                ],
+            ])
             ->setActionButtons(view('core/acl::users.profile.actions')->render());
     }
 }

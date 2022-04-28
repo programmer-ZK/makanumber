@@ -41,7 +41,7 @@ class ProfileForm extends FormAbstract
                 ],
             ])
             ->add('username', 'text', [
-                'label'      => trans('core/acl::users.username'),
+                'label'      => "trans('core/acl::users.username')",
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'       => [
                     'data-counter' => 30,
@@ -55,7 +55,7 @@ class ProfileForm extends FormAbstract
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'       => [
                     'placeholder'  => trans('core/acl::users.email_placeholder'),
-                    'data-counter' => 60,
+                    'data-counter' => 20,
                 ],
                 'wrapper'    => [
                     'class' => $this->formHelper->getConfig('defaults.wrapper_class') . ' col-md-6',
