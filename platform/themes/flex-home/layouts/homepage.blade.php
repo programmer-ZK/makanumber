@@ -327,7 +327,7 @@ $pkg = [];
                       <div class="col-sm-7 justify-content-start" style="display:flex;">
                         @foreach ($propertyUrl as $k => $url)
                         @if ($loop->first)
-                        <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 17) }}
+                        <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 30) }}
                           </a></p>
                         @endif
                         @endforeach
@@ -474,7 +474,7 @@ $pkg = [];
                     <div class="col-sm-7 justify-content-start" style="display:flex;">
                       @foreach ($propertyUrl as $k => $url)
                       @if ($loop->first)
-                      <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 17) }}
+                      <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 30) }}
                         </a></p>
                       @endif
                       @endforeach

@@ -15,7 +15,7 @@ use Carbon\Carbon;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<div class="w-100">
+<div class="">
   @include('layouts.property_search_form')
 </div>
 
@@ -141,9 +141,9 @@ if ($property->type == 'sale') {
         @endif
         <hr>
 
-        <a href="tel:{{$user->phone}}" style="color:white;"><button class="btn btn-dark mr-3" style="width:130px;"><i class="fa fa-phone" aria-hidden="true"></i> Call Now </button> </a>
+        <a href="tel:{{$user->phone}}" target="_blank" style="color:white;"><button class="btn btn-dark mr-3" style="width:130px;"><i class="fa fa-phone" aria-hidden="true"></i> Call Now </button> </a>
 
-        <a href="https://api.whatsapp.com/send?phone={{$user->phone}}" style="color:white;"> <button class="btn btn-success mr-2" style="width:130px; float: left;"> <i class="fab fa-whatsapp" aria-hidden="true"></i> Whatsapp</button></a>
+        <a href="https://api.whatsapp.com/send?phone={{$user->phone}}"  target="_blank" style="color:white;"> <button class="btn btn-success mr-2" style="width:130px; float: left;"> <i class="fab fa-whatsapp" aria-hidden="true"></i> Whatsapp</button></a>
 
 
         @endforeach

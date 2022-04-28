@@ -9,7 +9,7 @@
   <section class="row justify-content-center ">
     <section class="col-sm-3 mt-5">
       <p>About us</p>
-      <h1 style="font-weight:bold;"> Online Real Estate Marketplace</h1>
+      <h1 style="font-weight:bold;font-family: 'Montserrat', sans-serif !important;"> Online Real Estate Marketplace</h1>
       <p style="color:#2A2A2A;" class="mt-1">for Buyers, Sellers and Renters</p>
       <button class="btn btn-success px-3 create-btn" style="background-color:#00B4A2;">Create Account</button>
 
