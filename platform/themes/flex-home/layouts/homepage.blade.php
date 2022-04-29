@@ -331,20 +331,7 @@ $pkg = [];
                             <span style="text-transform: capitalize !important;">
                               {{ Str::limit($prop->name, 30) }}
 
-                              <?php
-                              if (Auth::user()) {
-                                $user_id = Auth::user()->id;
-                                $documents = \App\Models\Document::where('user_id', $user_id)->get();
-                                $doc_count = $documents->count();
 
-                                echo "<p> $doc_count </p>";
-
-                                if ($doc_count >= 1) {
-                                  echo "<p>Verified</p>";
-                                }
-                              }
-
-                              ?>
                             </span>
                           </a></p>
                         @endif
@@ -393,6 +380,22 @@ $pkg = [];
 
                         ?>
                         @foreach ($users as $user)
+
+                        <?php
+                        if (Auth::user()) {
+                          $user_id = Auth::user()->id;
+                          $documents = \App\Models\Document::where('user_id', $user['id'])->get();
+                          $doc_count = $documents->count();
+
+                          echo "<p> doc: $doc_count </p>";
+
+                          if ($doc_count >= 1) {
+                            echo "<p>Verified</p>";
+                          }
+                        }
+
+                        ?>
+
                         @if ($user['avatar_id'])
                         <span class="pl-2 pr-2 userName">{{ $user['first_name'] }}
                           {{ $user['last_name'] }}</span><img src="{{ asset('public/storage/users/' . $user['avatar_id']) }}" style="width:24px; height:24px; border-radius: 50%; " alt="profile-pic" class="mb-1 userName" />
