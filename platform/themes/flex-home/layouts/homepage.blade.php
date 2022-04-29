@@ -327,7 +327,7 @@ $pkg = [];
                       <div class="col-sm-7 justify-content-start" style="display:flex;">
                         @foreach ($propertyUrl as $k => $url)
                         @if ($loop->first)
-                        <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 17) }}
+                        <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 30) }}
                           </a></p>
                         @endif
                         @endforeach
@@ -474,7 +474,7 @@ $pkg = [];
                     <div class="col-sm-7 justify-content-start" style="display:flex;">
                       @foreach ($propertyUrl as $k => $url)
                       @if ($loop->first)
-                      <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 17) }}
+                      <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 30) }}
                         </a></p>
                       @endif
                       @endforeach
@@ -526,7 +526,8 @@ $pkg = [];
                         {{ $user['last_name'] }}</span><img src="{{ asset('public/storage/users/' . $user['avatar_id']) }}" style="width:24px; height:24px; border-radius: 50%; " alt="profile-pic" class="mb-1 userName" />
                       @else
                       <span class="pl-2 pr-2 userName">{{ $user['first_name'] }}
-                        {{ $user['last_name'] }}</span> <span class="userName"><span class="icon"><i class="fa fa-user" aria-hidden="true" style="height:34px; border-radius:5px !important;  "></i></span></span>
+                        {{ $user['last_name'] }}</span> <span class="userName"><span class="icon"><i class="fa fa-user" aria-hidden="true" style="height:34px; border-radius:5px !important;  "></i></span>
+                      </span>
                       @endif
                       @endforeach
                     </div>
