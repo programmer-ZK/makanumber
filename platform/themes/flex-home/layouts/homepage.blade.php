@@ -331,18 +331,20 @@ $pkg = [];
                             <span style="text-transform: capitalize !important;">
                               {{ Str::limit($prop->name, 30) }}
 
-                              @if (Auth::user())
-                              @php
-                              $user_id = Auth::user()->id;
-                              $documents = \App\Models\Document::where('user_id','=', $user_id)->get();
-                              $doc_count = $documents->count();
-                              @endphp
-                              <p><?= $doc_count ?></p>
+                              <?php
+                              if (Auth::user()) {
+                                $user_id = Auth::user()->id;
+                                $documents = \App\Models\Document::where('user_id', '=', $user_id)->get();
+                                $doc_count = $documents->count();
 
-                              @if($doc_count >= 1)
-                              <p>Verified</p>
-                              @endif
-                              @endif
+                                echo "<p> $doc_count </p>";
+
+                                if ($doc_count >= 1) {
+                                  echo "<p>Verified</p>";
+                                }
+                              }
+
+                              ?>
                             </span>
                           </a></p>
                         @endif
