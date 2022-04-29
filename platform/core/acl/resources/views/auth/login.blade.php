@@ -103,15 +103,15 @@
       <form class="form-container" action="{{route('access.login')}}" method="post">
         @csrf
         <div class="form-group">
-          <label for="exampleInputEmail1">{{ trans('core/acl::auth.login.username') }}</label>
+          <label for="exampleInputEmail1"style="color: black;">{{ trans('core/acl::auth.login.username') }}</label>
           {!! Form::text('username', request()->input('email', old('username', app()->environment('demo') ? config('core.base.general.demo.account.username', 'botble') : null)), ['class' => 'form-control', 'placeholder' => trans('core/acl::auth.login.username')]) !!}
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">{{ trans('core/acl::auth.login.password') }}</label>
+          <label for="exampleInputPassword1"style="color: black;">{{ trans('core/acl::auth.login.password') }}</label>
           {!! Form::input('password', 'password', request()->input('email') ? null : (app()->environment('demo') ? config('core.base.general.demo.account.password', '159357') : null), ['class' => 'form-control', 'placeholder' => trans('core/acl::auth.login.password')]) !!}
         </div>
         <div class="form-group form-check">
-          <label class="form-check-label" for="exampleCheck1">{!! Form::checkbox('remember', '1', true) !!} {{ trans('core/acl::auth.login.remember') }}</label>
+          <label class="form-check-label" for="exampleCheck1" style="color: black;">{!! Form::checkbox('remember', '1', true) !!} {{ trans('core/acl::auth.login.remember') }}</label>
           <span> <a href="{{ route('access.password.request') }}" style=" text-decoration: underline dashed;  float: right;">Forgot password?</a></span>
         </div>
         <button type="submit" style=" border: 1px rgb(0,180,162); border-radius: 5px; ; background: rgb(0,180,162);" class="btn btn-primary btn-block">

@@ -14,7 +14,14 @@ $packages =  DB::table('re_packages')
   ->select('*')
   ->get();
 ?>
-
+<style>
+  .nav-link.active{
+    color: #00B4A2 !important;
+  }
+  .nav-item{
+    margin:0px 20px; 
+  }
+</style>
 
 <div class="container center mt-5">
   @if(Session::has('success'))
@@ -36,11 +43,12 @@ $packages =  DB::table('re_packages')
     </ul>
   </div>
   @endif
-  <h1 class="mt-5" style="font-family: 'Montserrat', sans-serif !important;">My profile</h1>
+  <h1 class="mt-5" style="font-family: 'Montserrat', sans-serif !important;">My Profile</h1>
 
   <!-- End Navbar -->
 
   <ul class="nav mb-3 pills-margin" id="pills-tab" role="tablist" style="font-family: 'Montserrat', sans-serif !important;">
+
     <li class="nav-item">
       <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile Details</a>
     </li>
