@@ -4,7 +4,10 @@ $documents = \App\Models\Document::where('user_id', $item->id)->get();
 ?>
 @foreach($documents as $doc)
 @if($doc->count() >=1)
-<i class="fas fa-bed" aria-hidden="true" style="color:#00b4a2;"></i>
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+<i class="fas fa-badge-check" aria-hidden="true" style="color:#00b4a2;"></i>
+
 <a href="#openModal-about1/{{$item->id}}" class="btn btn-icon btn-warning " data-bs-toggle="tooltip" data-section="" role="button" data-bs-original-title="Documents">
     <i class="fa fa-file"></i>
 </a>
