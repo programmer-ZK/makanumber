@@ -332,10 +332,12 @@ $pkg = [];
                               {{ Str::limit($prop->name, 30) }}
 
                               @if (Auth::user())
+                              @php
                               $user_id = Auth::user()->id;
                               $documents = \App\Models\Document::where('user_id','=', $user_id)->get();
                               $doc_count = $documents->count();
-                              
+                              @endphp
+
                               @if($doc_count >=1)
                               <p>Verified</p>
                               @endif
