@@ -332,6 +332,10 @@ $pkg = [];
                               {{ Str::limit($prop->name, 30) }}
 
                               @if (Auth::user())
+                              $user_id = Auth::user()->id;
+                              $user_role_id = DB::table('role_users')->where('user_id', '=', $user_id)->value('role_id');
+                              $documents = \App\Models\Document::where('user_id', $user_id)->get();
+                              
                               @foreach($documents as $doc)
                               @if($doc->count() >=1)
                               <p>Verified</p>
