@@ -336,7 +336,7 @@ $pkg = [];
                               $user_role_id = DB::table('role_users')->where('user_id', '=', $user_id)->value('role_id');
                               $documents = \App\Models\Document::where('user_id', $user_id)->get();
 
-                                @if($doc->count() >=1)
+                                @if($documents->count() >=1)
                                       <p>Verified</p>
                                 @endif
                               @endif
