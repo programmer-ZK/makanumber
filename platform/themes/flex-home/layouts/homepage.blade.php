@@ -366,7 +366,7 @@ $pkg = [];
                         @endif
 
                         @if ($prop->number_bedroom)
-                        <span class="m-1"><i class="fa fa-bed" aria-hidden="true" style="color:#FB9F35;"></i><i class="fad fa-bed-alt"></i>
+                        <span class="m-1"><i class="fas fa-bed" aria-hidden="true" style="color:#FB9F35;"></i><i class="fad fa-bed-alt"></i>
                           {{ $prop->number_bedroom }}</span>
                         @endif
 
