@@ -9,9 +9,9 @@
                 @endif
 
                 @auth
-                    <div class="menu-toggler sidebar-toggler">
+                    <!-- <div class="menu-toggler sidebar-toggler">
                         <span></span>
-                    </div>
+                    </div> -->
                 @endauth
             </div>
 

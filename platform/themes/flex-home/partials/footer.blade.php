@@ -32,7 +32,7 @@
         </li>
 
         <li class="li pb-3">
-          <a  href="/customer-service" style=" color:black !important;">Advertise with us</a>
+          <a href="/customer-service" style=" color:black !important;">Advertise with us</a>
         </li>
       </ul>
     </div>
@@ -94,7 +94,7 @@
         </li>
 
         <li class="li pb-3">
-          <a>info@makanumber.com</a>
+          <a href="mailto:info@makanumber.com">info@makanumber.com</a>
         </li>
       </ul>
     </div>
@@ -161,6 +161,11 @@
 <!--FOOTER-->
 
 <style>
+  .green1 {
+    border: 1px solid #00B4A2;
+    margin-right: 65%;
+  }
+
   li {
     color: #2A2A2A !important;
   }

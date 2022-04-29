@@ -327,7 +327,18 @@ $pkg = [];
                       <div class="col-sm-7 justify-content-start" style="display:flex;">
                         @foreach ($propertyUrl as $k => $url)
                         @if ($loop->first)
-                        <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 30) }}
+                        <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">
+                            <span style="text-transform: capitalize !important;">
+                              {{ Str::limit($prop->name, 30) }}
+
+                              @if (Auth::user())
+                              @foreach($documents as $doc)
+                              @if($doc->count() >=1)
+                              <p>Verified</p>
+                              @endif
+                              @endforeach
+                              @endif
+                            </span>
                           </a></p>
                         @endif
                         @endforeach
@@ -357,15 +368,16 @@ $pkg = [];
                       <div class="col-sm-12 pl-4" style="float:left;  text-align:left !important;">
                         &nbsp;&nbsp;
                         @if ($prop->square)
-                        <span><i class="fa fa-area-chart" aria-hidden="true" style="color:gold;"></i> {{ $prop->square }} </span>
+                        <span class="m-1"><i class="fa fa-area-chart" aria-hidden="true" style="color:gold;"></i> {{ $prop->square }} </span>
                         @endif
 
                         @if ($prop->number_bedroom)
-                        <span><i class="fa fa-bed" aria-hidden="true" style="color:#FB9F35;"></i><i class="fad fa-bed-alt"></i>
+                        <span class="m-1"><i class="fa fa-bed" aria-hidden="true" style="color:#FB9F35;"></i><i class="fad fa-bed-alt"></i>
                           {{ $prop->number_bedroom }}</span>
                         @endif
+
                         @if ($prop->number_bathroom)
-                        <span><i class="fa fa-bath" aria-hidden="true" style="color:#FB9F35;"></i>
+                        <span class="m-1"><i class="fa fa-bath" aria-hidden="true" style="color:#FB9F35;"></i>
                           {{ $prop->number_bathroom }}</span>
                         @endif
                         &nbsp;
@@ -474,8 +486,13 @@ $pkg = [];
                     <div class="col-sm-7 justify-content-start" style="display:flex;">
                       @foreach ($propertyUrl as $k => $url)
                       @if ($loop->first)
-                      <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">{{ Str::limit($prop->name, 30) }}
+                      <p><a style="color:white !important; font-weight:bold; padding-left:25px; " href="properties/{{ $url->key }}">
+
+                          <span style="text-transform: capitalize !important;">
+                            {{ Str::limit($prop->name, 30) }}
+                          </span>
                         </a></p>
+
                       @endif
                       @endforeach
                     </div>
@@ -504,18 +521,20 @@ $pkg = [];
                     <div class="col-sm-12 pl-4" style="float:left;  text-align:left !important;">
                       &nbsp;&nbsp;
                       @if ($prop->square)
-                      <span><i class="fa fa-area-chart" aria-hidden="true" style="color:gold;"></i> {{ $prop->square }} </span>
+                      <span class="m-1"><i class="fa fa-area-chart" aria-hidden="true" style="color:gold;"></i> {{ $prop->square }} </span>
                       @endif
 
                       @if ($prop->number_bedroom)
-                      <span><i class="fa fa-bed" aria-hidden="true" style="color:#FB9F35;"></i><i class="fad fa-bed-alt"></i>
+                      <span class="m-1"><i class="fa fa-bed" aria-hidden="true" style="color:#FB9F35;"></i><i class="fad fa-bed-alt"></i>
                         {{ $prop->number_bedroom }}</span>
                       @endif
+
                       @if ($prop->number_bathroom)
-                      <span><i class="fa fa-bath" aria-hidden="true" style="color:#FB9F35;"></i>
+                      <span class="m-1"><i class="fa fa-bath" aria-hidden="true" style="color:#FB9F35;"></i>
                         {{ $prop->number_bathroom }}</span>
                       @endif
                       &nbsp;
+
                       <?php
                       $users = \App\Models\UserModel::where(['id' => $prop->author_id])->get();
 

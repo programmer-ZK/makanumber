@@ -436,7 +436,7 @@
                     </li>
 
                     <li class="li pb-3">
-                        <a>info@makanumber.com</a>
+                        <a href="mailto:info@makanumber.com">info@makanumber.com</a>
                     </li>
                 </ul>
             </div>

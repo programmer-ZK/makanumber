@@ -227,8 +227,7 @@
       $('.ag_member').css('color', '#8695A1');
 
     });
-
-
+    
   });
 </script>
 @stop
