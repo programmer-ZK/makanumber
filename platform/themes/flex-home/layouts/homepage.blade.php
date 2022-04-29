@@ -333,10 +333,10 @@ $pkg = [];
 
                               @if (Auth::user())
                               $user_id = Auth::user()->id;
-
                               $documents = \App\Models\Document::where('user_id','=', $user_id)->get();
-
-                              @if($documents->count() >=1)
+                              $doc_count = $documents->count();
+                              
+                              @if($doc_count >=1)
                               <p>Verified</p>
                               @endif
 
