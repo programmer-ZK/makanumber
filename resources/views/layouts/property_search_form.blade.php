@@ -11,7 +11,7 @@ $cities = DB::table('cities')
     <div class="mt-3 ml-4 mr-4">
 
       <div class="row mt-2">
-        <div class="col-sm" style="padding-left:0px !important">
+        <div class="col-lg-1" style="padding-left:0px !important">
 
           <div class="input-group input border-0">
             <select class="custom-select" id="purpose" name="purpose" style="color:grey;" required>
@@ -23,10 +23,10 @@ $cities = DB::table('cities')
 
         </div>
 
-        <div class="col-sm" style="padding-left:0px !important">
+        <div class="col-lg-2" style="padding-left:0px !important">
 
           <div class="input-group input border-0">
-            <select class="custom-select " id="location" name="location" style="color:grey;  width:250px !important;">
+            <select class="custom-select " id="location" name="location" style="color:grey;">
               <option value="" selected disabled>Location</option>
               @foreach($cities as $city)
               @if(isset($_GET['location']) && $_GET['location'] == $city->id)
@@ -41,11 +41,11 @@ $cities = DB::table('cities')
 
         </div>
 
-        <div class="col-sm" style="padding-left:0px !important">
+        <div class="col-lg-2" style="padding-left:0px !important">
 
           <div class=" input-group input border-0">
 
-            <select class="custom-select" id="propertyType" name="propertyType" style="color:grey;  width:250px !important; ">
+            <select class="custom-select" id="propertyType" name="propertyType" style="color:grey; ">
               <option value="" selected disabled>Property Type</option>
               <optgroup label="Residential" data-max-options="2">
                 <option value="1" <?= (isset($_GET['propertyType']) && $_GET['propertyType'] == 1) ? "selected" : "" ?>>Apartment</option>
@@ -69,9 +69,7 @@ $cities = DB::table('cities')
 
         </div>
 
-
-
-        <div class="col-sm" style="padding-left:0px !important">
+        <div class="col-lg-1" style="padding-left:0px !important">
 
           <div class=" input-group input border-0">
 
@@ -92,9 +90,9 @@ $cities = DB::table('cities')
 
         </div>
 
-        <div class="col-sm" style="padding-left:0px !important">
+        <div class="col-lg-2" style="padding-left:0px !important">
 
-          <div class=" input-group input border-0">
+          <div class="input-group input border-0">
             <select class="custom-select " id="areaFrom" name="areaFrom" style="color:grey; width:60px !important; ">
               <option value="" selected disabled>Min</option>
               <option value="100" <?= (isset($_GET['areaFrom']) && $_GET['areaFrom'] == 100) ? "selected" : "" ?>>100 Sq.ft</option>
@@ -144,7 +142,7 @@ $cities = DB::table('cities')
 
         </div>
 
-        <div class="col-sm fromPrice" style="padding-left:0px !important">
+        <div class="col-lg-2 fromPrice" style="padding-left:0px !important">
           <div class=" input-group input border-0">
             <select class="custom-select" id="priceFrom" name="priceFrom" style="color:grey; width:60px !important;">
               <option value="" selected disabled>Min</option>
@@ -249,7 +247,7 @@ $cities = DB::table('cities')
 
         </div>
 
-        <div class="col-sm ml-3 mt-1 searchBtn" style="padding-left:0px !important; ">
+        <div class="col-lg-1 ml-3 mt-1 searchBtn" style="padding-left:0px !important; ">
           <button class="btn btn-success button" type="submit" style="background-color:#00B4A2; width:200px;">Search</button>
         </div>
       </div>
