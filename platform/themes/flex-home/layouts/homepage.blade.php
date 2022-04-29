@@ -392,7 +392,7 @@ $pkg = [];
                         <span class="pl-2 pr-2 userName">{{ $user['first_name'] }}
                           {{ $user['last_name'] }}
                           @if ($doc_count >= 1)
-                            <p>✅</p>;
+                            ✅
                           @endif
                         </span>
                         <img src="{{ asset('public/storage/users/' . $user['avatar_id']) }}" style="width:24px; height:24px; border-radius: 50%; " alt="profile-pic" class="mb-1 userName" />
