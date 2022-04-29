@@ -1,5 +1,5 @@
 @if (is_plugin_active('blog'))
-    <div class="">
+    <div class="mt-5">
         <h5>{{ $config['name'] }}</h5>
         <ul class="listnews">
             @foreach(get_categories(['select' => ['categories.id', 'categories.name']]) as $category)
