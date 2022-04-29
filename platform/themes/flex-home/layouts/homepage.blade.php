@@ -362,7 +362,7 @@ $pkg = [];
                       <div class="col-sm-12 pl-4" style="float:left;  text-align:left !important;">
                         &nbsp;&nbsp;
                         @if ($prop->square)
-                        <span class="m-1"><i class="fas fa-area-chart" aria-hidden="true" style="color:gold;"></i> {{ $prop->square }} </span>
+                        <span class="m-1"><i class="fas fa-chart-area" aria-hidden="true" style="color:gold;"></i> {{ $prop->square }} </span>
                         @endif
 
                         @if ($prop->number_bedroom)
@@ -528,7 +528,7 @@ $pkg = [];
                     <div class="col-sm-12 pl-4" style="float:left;  text-align:left !important;">
                       &nbsp;&nbsp;
                       @if ($prop->square)
-                      <span class="m-1"><i class="fa fa-area-chart" aria-hidden="true" style="color:gold;"></i> {{ $prop->square }} </span>
+                      <span class="m-1"><i class="fas fa-chart-area" aria-hidden="true" style="color:gold;"></i> {{ $prop->square }} </span>
                       @endif
 
                       @if ($prop->number_bedroom)
