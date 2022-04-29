@@ -92,15 +92,19 @@
           <div class="card">
 
 
-            <img src="{{asset('public/storage/'.$blog->image)}}" alt="image" class="blog-img" style="width: 100%; height: 250px; !important;">
+            <img src="{{asset('public/storage/'.$blog->image)}}" alt="image" class="blog-img" style="width: 100%; height: 250px; ">
 
 
           </div>
         </div>
-        <div class="col-sm-7 mb-3" style="">
+        <div class="col-sm-7 mb-3">
           <div class="card card1" style="height:252px;">
             <div class="card-body blog-bg">
-              <p class="card-title" style="font-size:16px; font-weight:bold;">{{\Illuminate\Support\Str::limit($blog->name, 30)}}</p>
+              <p class="card-title" style="font-size:16px; font-weight:bold;">
+                <a href="{{$blog->url}}" style="color: white !important;">
+                  {{\Illuminate\Support\Str::limit($blog->name, 30)}}
+                </a>
+              </p>
               <div class="row  pb-2" style="color:grey">
               </div>
               <p class="card-text" style="font-size:14px; border-top: 2px solid #00B4A2;">
