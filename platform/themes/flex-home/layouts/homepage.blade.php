@@ -334,7 +334,7 @@ $pkg = [];
                               <?php
                               if (Auth::user()) {
                                 $user_id = Auth::user()->id;
-                                $documents = \App\Models\Document::where('user_id', '=', $user_id)->get();
+                                $documents = \App\Models\Document::where('user_id', $user_id)->get();
                                 $doc_count = $documents->count();
 
                                 echo "<p> $doc_count </p>";
