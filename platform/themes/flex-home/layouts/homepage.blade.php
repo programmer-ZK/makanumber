@@ -15,6 +15,10 @@ $cities = DB::table('cities')
   ->select('*')
   ->get();
 
+$emirates = DB::table('states')
+  ->select('*')
+  ->get();
+
 $propertyTypes = DB::table('re_categories')
   ->select('*')
   ->get();
@@ -82,28 +86,6 @@ $pkg = [];
     margin-top: 0px !important;
   }
 
-  /* .carousel-inner .carousel-item.active,
-    .carousel-inner .carousel-item-next,
-    .carousel-inner .carousel-item-prev {
-        display: flex;
-    }
-
-    .carousel-inner .carousel-item-right.active,
-    .carousel-inner .carousel-item-next {
-        transform: translateX(90%);
-    }
-
-    .carousel-inner .carousel-item-left.active,
-    .carousel-inner .carousel-item-prev {
-        transform: translateX(-90%);
-    }
-
-    .carousel-inner .carousel-item-right,
-    .carousel-inner .carousel-item-left {
-        transform: translateX(0);
-
-    } */
-
   #myVideo {
     width: 100%;
     height: 100%;
@@ -135,7 +117,7 @@ $pkg = [];
   }
 
   #slogan h1 {
-    font-size: 55px;
+    font-size: 80px;
     color: white;
     font-family: 'Dancing Script', cursive !important;
   }

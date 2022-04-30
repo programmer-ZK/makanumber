@@ -23,7 +23,25 @@ $cities = DB::table('cities')
 
         </div>
 
-        <div class="col-lg-2" style="padding-left:0px !important">
+        <div class="col-lg-1" style="padding-left:0px !important">
+
+          <div class="input-group input border-0">
+            <select class="custom-select " id="state" name="location" style="color:grey;">
+              <option value="" selected disabled>Emirates</option>
+              @foreach($emirates as $state)
+              @if(isset($_GET['state']) && $_GET['state'] == $state->id)
+              <option value="{{$state->id}}" selected>{{$state->name}}</option>
+              @else
+              <option value="{{$state->id}}">{{$state->name}}</option>
+              @endif
+              @endforeach
+
+            </select>
+          </div>
+
+        </div>
+
+        <div class="col-lg-1" style="padding-left:0px !important">
 
           <div class="input-group input border-0">
             <select class="custom-select " id="location" name="location" style="color:grey;">
