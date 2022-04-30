@@ -223,7 +223,12 @@ $packages =  DB::table('re_packages')
 
                   @foreach($propertyUrl as $k => $url)
                   @endforeach
-                  <p class="card-title" style="font-size:16px; font-weight:bold;"><span style="color:white !important;">{{\Illuminate\Support\Str::limit($prop->name, 30)}}</span> <span style="float:right; color:#0AAC7E; font-weight:light;">AED {{$price}}</span></p>
+                  <p class="card-title" style="font-size:16px; font-weight:bold;">
+                    <a href="{{$prop->url}}">
+                      <span style="color:white !important;">{{\Illuminate\Support\Str::limit($prop->name, 30)}}</span>
+                    </a>
+                    <span style="float:right; color:#0AAC7E; font-weight:light;">AED {{$price}}</span>
+                  </p>
                   <p style="color:#B7B7B7; font-size:14px;">{{$prop->location}}</p>
                   <div class="row" style="color:grey">
                   </div>
