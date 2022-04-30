@@ -1,3 +1,8 @@
+<style>
+  .scontent img {
+    width: 100%;
+  }
+</style>
 <div class="container padtop50">
   <div class="row">
     <div class="col-sm-9">
