@@ -15,11 +15,12 @@ $packages =  DB::table('re_packages')
   ->get();
 ?>
 <style>
-  .nav-link.active{
+  .nav-link.active {
     color: #00B4A2 !important;
   }
-  .nav-item{
-    margin:0px 20px; 
+
+  .nav-item {
+    margin: 0px 20px;
   }
 </style>
 
@@ -145,7 +146,7 @@ $packages =  DB::table('re_packages')
 
             <div class="col-sm-12 mt-5">
               <label class="form-label">New Password</label><br />
-              <input type="password" class="form-control" name="new_password"  required/>
+              <input type="password" class="form-control" name="new_password" required />
             </div>
 
             <div class="col-sm-12 mt-5">
@@ -221,10 +222,8 @@ $packages =  DB::table('re_packages')
                   ?>
 
                   @foreach($propertyUrl as $k => $url)
-                  @if($loop->first)
-                  <p class="card-title" style="font-size:16px; font-weight:bold;"><span style="color:white !important;"> {{Str::limit($prop->name, 25)}}</span> <span style="float:right; color:#0AAC7E; font-weight:light;">AED {{$price}}</span></p>
-                  @endif
                   @endforeach
+                  <p class="card-title" style="font-size:16px; font-weight:bold;"><span style="color:white !important;">{{\Illuminate\Support\Str::limit($prop->name, 30)}}</span> <span style="float:right; color:#0AAC7E; font-weight:light;">AED {{$price}}</span></p>
                   <p style="color:#B7B7B7; font-size:14px;">{{$prop->location}}</p>
                   <div class="row" style="color:grey">
                   </div>
@@ -242,7 +241,7 @@ $packages =  DB::table('re_packages')
                     @endif
                     <br />
                   </div>
-                  <span style="color:#B7B7B7; overflow-y: hidden !important;">{{\Illuminate\Support\Str::limit($prop->description, 70)}} </span> </p>
+                  <span style="color:#B7B7B7; overflow-y: hidden !important;">{{\Illuminate\Support\Str::limit($prop->description, 100)}} </span> </p>
                   <p class="card-text" style="font-size:12px; color: #00B4A2;">
                     @if(Auth::user()->avatar_id)
                     <li class="nav-item ml-2 mr-0" style="list-style:none !important;">
