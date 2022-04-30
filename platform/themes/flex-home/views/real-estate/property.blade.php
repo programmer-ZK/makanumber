@@ -86,7 +86,7 @@ if ($property->type == 'sale') {
         </div>
 
         <div class="col-sm-1 ml-3 icon1  py-1">
-          <i class="fa fa-area-chart " style="font-size:40px; color:grey;"></i>
+          <i class="fa fa-chart-area " style="font-size:40px; color:grey;"></i>
         </div>
         <div class="col-sm-1">
           <h5>{{$property->square }}</h5>
