@@ -1,6 +1,12 @@
 <style>
+  .scontent {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
   .scontent img {
-    width: 100%;
+    width: 800px !important;
+    /* width: 100% !important; */
   }
 </style>
 <div class="container padtop50">
