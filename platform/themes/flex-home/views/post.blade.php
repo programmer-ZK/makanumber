@@ -36,7 +36,8 @@
               <div class="grid-shadow grid-shadow-gray">
                 <div class="hourseitem" style="margin-top: 0;">
                   <div class="blii">
-                    <div class="img"><img style="border-radius: 0" class="thumb" data-src="{{ RvMedia::getImageUrl($relatedItem->image, 'small', false, RvMedia::getDefaultImage()) }}" src="{{ RvMedia::getImageUrl($relatedItem->image, 'small', false, RvMedia::getDefaultImage()) }}" alt="{{ $relatedItem->name }}">
+                    <div class="img">
+                      <img style="border-radius: 0;width: 100%;" class="thumb" data-src="{{ RvMedia::getImageUrl($relatedItem->image, 'small', false, RvMedia::getDefaultImage()) }}" src="{{ RvMedia::getImageUrl($relatedItem->image, 'small', false, RvMedia::getDefaultImage()) }}" alt="{{ $relatedItem->name }}">
                     </div>
                     <a href="{{ $relatedItem->url }}" class="linkdetail"></a>
                   </div>
@@ -44,14 +45,18 @@
                 <div class="grid-h">
                   <div class="blog-title">
                     <a href="{{ route('public.single', $relatedItem->slug) }}">
-                      <h2>{{ $relatedItem->name }}</h2>
+                      <h2>
+                        {{\Illuminate\Support\Str::limit($relatedItem->name, 30)}}
+                      </h2>
                     </a>
                     <div class="post-meta">
                       <p class="d-inline-block">{{ $relatedItem->created_at->translatedFormat('d M, Y') }}</p> - <p class="d-inline-block"><i class="fa fa-eye"></i> {{ number_format($relatedItem->views) }}</p>
                     </div>
                   </div>
                   <div class="blog-excerpt">
-                    <p>{{ Str::words($relatedItem->description, 40) }}</p>
+                    <p>
+                      {{\Illuminate\Support\Str::limit($relatedItem->description, 100)}}
+                    </p>
                   </div>
                 </div>
               </div>

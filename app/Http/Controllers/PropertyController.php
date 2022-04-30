@@ -16,6 +16,11 @@ class PropertyController extends Controller
 {
   public function myProfile()
   {
+
+    if (!Auth::user()) {
+      return redirect('/');
+    }
+
     $bannerImage = Advertisement::all();
 
     $userId = Auth::user()->id;

@@ -8,7 +8,7 @@
           <div class="hourseitem" style="margin-top: 0;">
             <div class="blii">
               <div class="img">
-                <img data-src="{{ RvMedia::getImageUrl($post->image, 'small', false, RvMedia::getDefaultImage()) }}" src="{{ RvMedia::getImageUrl($post->image, 'small', false, RvMedia::getDefaultImage()) }}" alt="{{ $post->name }}" class="thumb" style="border-radius: 0;">
+                <img data-src="{{ RvMedia::getImageUrl($post->image, 'small', false, RvMedia::getDefaultImage()) }}" src="{{ RvMedia::getImageUrl($post->image, 'small', false, RvMedia::getDefaultImage()) }}" alt="{{ $post->name }}" class="thumb" style="border-radius: 0; width: 100%;">
               </div>
               <a href="{{ $post->url }}" title="{{ $post->name }}" class="linkdetail"></a>
             </div>
@@ -24,7 +24,8 @@
             </div>
             <div class="blog-excerpt">
               <p>
-              {{\Illuminate\Support\Str::limit($post->description, 100)}}</p>
+                {{\Illuminate\Support\Str::limit($post->description, 100)}}
+              </p>
             </div>
           </div>
         </div>

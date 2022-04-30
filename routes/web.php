@@ -104,12 +104,9 @@ Route::post('package', 'App\Http\Controllers\SubscriptionController@package');
 
 Route::post('/search', 'App\Http\Controllers\PropertyController@singleProperty');
 
-Route::get('/clear', function() {
+Route::get('/clear', function () {
 
     Artisan::call('cache:clear');
     Artisan::call('config:cache');
     return "Cleared!";
- 
- });
- 
-
+});

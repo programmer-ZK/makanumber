@@ -36,7 +36,7 @@
   </section>
 </section>
 
-<section class="container">
+<!-- <section class="container">
   <section class="row">
 
     <section class="col-sm">
@@ -69,17 +69,8 @@
 
     </section>
 
-
-    <!--<section class="col-sm">-->
-    <!--    <button type="submit" class="btn btn-primary blogbtn" id="blogbtn" > Home Inspiration</button>-->
-
-
-    <!--</section>-->
-
-
-
   </section>
-</section>
+</section> -->
 
 <div class="container">
 
@@ -101,7 +92,7 @@
           <div class="card card1" style="height:252px;">
             <div class="card-body blog-bg">
               <p class="card-title" style="font-size:16px; font-weight:bold;">
-                <a href="{{$blog->url}}" style="color: white !important;">
+                <a href="#" style="color: white !important;">
                   {{\Illuminate\Support\Str::limit($blog->name, 30)}}
                 </a>
               </p>

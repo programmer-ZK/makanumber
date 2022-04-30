@@ -214,7 +214,7 @@
             <span class="nav-link " href="#">More <span class="navbar-toggler-icon my-toggler" style="margin-left:-2px; font-size:20px;"></span></span>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="/about-us">About Us</a>
-              <a class="dropdown-item" href="/blogs">Blog</a>
+              <a class="dropdown-item" href="/news">Blog</a>
               <a class="dropdown-item" href="/customer-service">Contact us</a>
               <a class="dropdown-item" href="/privacy-policy">Privacy Policy</a>
             </div>
@@ -230,7 +230,7 @@
                       </li>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="/about-us">About Us</a>
-                          <a class="dropdown-item" href="/blogs">Blog</a>
+                          <a class="dropdown-item" href="/news">Blog</a>
                           <a class="dropdown-item" href="/customer-service">Contact us</a>
                           <a class="dropdown-item" href="/privacy-policy">Privacy Policy</a>
                       </div>
@@ -363,7 +363,7 @@
                     </li>
 
                     <li class="li pb-3">
-                        <a href="/blogs" style=" color:black !important;">Blog</a>
+                        <a href="/news" style=" color:black !important;">Blog</a>
                     </li>
 
                     <li class="li pb-3">

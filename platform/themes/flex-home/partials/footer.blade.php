@@ -28,7 +28,7 @@
         </li>
 
         <li class="li pb-3">
-          <a href="/blogs" style=" color:black !important;">Blog</a>
+          <a href="/news" style=" color:black !important;">Blog</a>
         </li>
 
         <li class="li pb-3">

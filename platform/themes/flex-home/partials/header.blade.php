@@ -159,7 +159,7 @@ if (Auth::user()) {
           <span class="nav-link " href="#">More <span class="navbar-toggler-icon my-toggler" style="margin-left:-2px; font-size:20px;"></span></span>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="/about-us">About Us</a>
-            <a class="dropdown-item" href="/blogs">Blog</a>
+            <a class="dropdown-item" href="/news">Blog</a>
             <a class="dropdown-item" href="/customer-service">Contact us</a>
             <a class="dropdown-item" href="/privacy-policy">Privacy Policy</a>
           </div>
@@ -172,7 +172,7 @@ if (Auth::user()) {
           </li>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="/about-us">About Us</a>
-            <a class="dropdown-item" href="/blogs">Blog</a>
+            <a class="dropdown-item" href="/news">Blog</a>
             <a class="dropdown-item" href="/customer-service">Contact us</a>
             <a class="dropdown-item" href="/privacy-policy">Privacy Policy</a>
           </div>
