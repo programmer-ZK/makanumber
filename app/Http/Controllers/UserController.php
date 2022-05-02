@@ -187,7 +187,7 @@ class UserController extends Controller
 
     if ($activations_id > 0) {
       // return view('Frontend.activate');
-      return redirect('/admin/login')->with('success', `Dear {{$name}}, Your account has already been activated`);
+      return redirect('/admin/login')->back()->with('success', `Dear {{$name}}, Your account has already been activated`);
     } else {
       DB::table('activations')->insert([
         'user_id' => $id,
@@ -199,7 +199,7 @@ class UserController extends Controller
       $user->update();
 
       // return view('Frontend.activate', ['name' => $name]);
-      return redirect('/admin/login')->with('success', `Dear {{$name}}, Your account is successfully activated, Please Log in to continue!`);
+      return redirect('/admin/login')->back()->with('success', `Dear {{$name}}, Your account is successfully activated, Please Log in to continue!`);
     }
   }
 
