@@ -5,6 +5,10 @@ $cities = DB::table('cities')
 
 $propertyTypes = DB::table('re_categories')
   ->select('*')->get();
+
+$emirates = DB::table('states')
+  ->select('*')
+  ->get();
 ?>
 
 @extends('layouts.master')
@@ -106,11 +110,18 @@ $propertyTypes = DB::table('re_categories')
 
           <div class="col-sm-9">
             <div class="row ml-1">
-              <select style="padding:5px 10px " class="ml-1 select-color" name="city_id" required>
+              <select class="select-color" id="emirates" name="emirates">
+                <option value="" selected disabled>Select Emirates</option>
+                @foreach($emirates as $emirate)
+                <option value="{{$emirate->id}}">{{$emirate->name}}</option>
+                @endforeach
+              </select>
 
-                <option value="" disabled selected>Select Emirates</option>
+              <select style="padding:5px 10px " class="ml-1 select-color" id="location" name="city_id" required>
+
+                <option value="" disabled selected>Select Area</option>
                 @foreach($cities as $city)
-                <option value="{{$city->id}}">{{$city->name}}</option>
+                <option value="{{$city->id}}" data-emirate-id="{{$city->state_id}}">{{$city->name}}</option>
                 @endforeach
               </select>
             </div>
@@ -300,7 +311,7 @@ $propertyTypes = DB::table('re_categories')
 
       <div class="container-fluid mb-5" style="background-color: #00B4A2; height: 48px;">
         <p class="green-line">ADD IMAGES AND VIDEOS</p>
-        </div>
+      </div>
       <div class="container-fluid mb-5">
         <div class="container">
 
@@ -322,9 +333,9 @@ $propertyTypes = DB::table('re_categories')
                   </div>
                   {{-- <input type="file" name="prop_images[]" id="fileUpload" style="cursor:pointer;" onClick="listFiles()" multiple required />
                   <span class="fileName"></span> --}}
-                 
+
                 </div>
-                
+
               </div>
 
             </div>
@@ -393,73 +404,45 @@ $propertyTypes = DB::table('re_categories')
 
 <script>
   $(document).ready(function() {
-  //   function listFiles() {
-  //     var input = $("input[type='file']")[0];
-  //     var ul = $("#result");
-  //     for (var i = 0; i < input.files.length; i++) {
-  //       $('<li>').text(input.files[i].name).appendTo(ul);
-  //     }
-  //   }
-
-  //   $('input:file').change(function() {
-  //     listFiles();
-  //   });
-
-
-  //   $('.items').slick({
-  //     infinite: true,
-  //     slidesToShow: 3,
-  //     slidesToScroll: 3,
-  //   });
-  // });
-
-
-  // $('input[type=file]').change(function(e) {
-  //   $in = $(this);
-  //   $in.next().html($in.val());
-
-  // });
-
-  // $('.uploadButton').click(function() {
-  //   var fileName = $("#fileUpload").val();
-  //   if (fileName) {
-  //     alert(fileName + " can be uploaded.");
-  //   } else {
-
-  //   }
-
     $(function() {
-            var imagesPreview = function(input, placeToInsertImagePreview) {
-                if (input.files) {
-                    var filesAmount = input.files.length;
-                    for (i = 0; i < filesAmount; i++) {
-                        var reader = new FileReader();
-                        reader.onload = function(event) {
-                            var randomId = Math.random().toString(36).slice(2, 7);
-                            $($.parseHTML('<img id="' + randomId + '" width=200px height=200px>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                            $($.parseHTML('<a id="aa' + randomId + '" width=200px height=200pxclass="remove" onclick="removeImage(\'' + randomId + '\')">Remove image</a>')).appendTo(placeToInsertImagePreview);
-                            
-                          }
-                        reader.readAsDataURL(input.files[i]);
-                    }
-                }
-            };
+      var imagesPreview = function(input, placeToInsertImagePreview) {
+        if (input.files) {
+          var filesAmount = input.files.length;
+          for (i = 0; i < filesAmount; i++) {
+            var reader = new FileReader();
+            reader.onload = function(event) {
+              var randomId = Math.random().toString(36).slice(2, 7);
+              $($.parseHTML('<img id="' + randomId + '" width=200px height=200px>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+              $($.parseHTML('<a id="aa' + randomId + '" width=200px height=200pxclass="remove" onclick="removeImage(\'' + randomId + '\')">Remove image</a>')).appendTo(placeToInsertImagePreview);
 
-            $('#gallery-photo-add').on('change', function() {
-                imagesPreview(this, 'div.gallery');
-            });
-        });
+            }
+            reader.readAsDataURL(input.files[i]);
+          }
+        }
+      };
 
-        
-
+      $('#gallery-photo-add').on('change', function() {
+        imagesPreview(this, 'div.gallery');
+      });
+    });
   });
 
   function removeImage(arr) {
-    
-    $('#'+arr).remove();
-    $('#aa'+arr).remove();
+    $('#' + arr).remove();
+    $('#aa' + arr).remove();
   }
-  
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('#emirates').on('change', function() {
+      state_id = $("#emirates option:selected").val();
+      if (state_id != null) {
+        $("#location > option").css("display", "none");
+        $("#location > option[data-emirate-id=" + state_id + "]").css("display", "inline-block");
+      }
+    });
+  });
 </script>
 
 @stop

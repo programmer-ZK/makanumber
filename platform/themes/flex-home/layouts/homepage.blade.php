@@ -15,11 +15,7 @@ $cities = DB::table('cities')
   ->select('*')
   ->get();
 
-$emirates = DB::table('states')
-  ->select('*')
-  ->get();
-
-$propertyTypes = DB::table('re_categories')
+  $propertyTypes = DB::table('re_categories')
   ->select('*')
   ->get();
 
@@ -32,6 +28,7 @@ $palm = DB::table('states')
 $state = \Botble\Location\Models\State::with(['cities.properties'])
   ->where('id', 2)
   ->get();
+
 $dubai_city = \Botble\Location\Models\City::where('state_id', 1)->get();
 $jumeriah_city = \Botble\Location\Models\City::where('state_id', 2)->get();
 $abu_dhabi_city = \Botble\Location\Models\City::where('state_id', 3)->get();

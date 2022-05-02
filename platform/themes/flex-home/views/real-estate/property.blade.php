@@ -3,6 +3,12 @@ $bannerImage = \App\Models\Advertisement::all();
 $users = \App\Models\UserModel::where(['id' => $property->author_id])->get();
 
 use Carbon\Carbon;
+
+
+$state = \Botble\Location\Models\State::with(['cities.properties'])
+  ->where('id', 2)
+  ->get();
+
 ?>
 
 <style>
@@ -143,7 +149,7 @@ if ($property->type == 'sale') {
 
         <a href="tel:{{$user->phone}}" target="_blank" style="color:white;"><button class="btn btn-dark mr-3" style="width:130px;"><i class="fa fa-phone" aria-hidden="true"></i> Call Now </button> </a>
 
-        <a href="https://api.whatsapp.com/send?phone={{$user->phone}}"  target="_blank" style="color:white;"> <button class="btn btn-success mr-2" style="width:130px; float: left;"> <i class="fab fa-whatsapp" aria-hidden="true"></i> Whatsapp</button></a>
+        <a href="https://api.whatsapp.com/send?phone={{$user->phone}}" target="_blank" style="color:white;"> <button class="btn btn-success mr-2" style="width:130px; float: left;"> <i class="fab fa-whatsapp" aria-hidden="true"></i> Whatsapp</button></a>
 
 
         @endforeach

@@ -2,7 +2,12 @@
 
 $cities = DB::table('cities')
   ->select('*')->get();
+
+$emirates = DB::table('states')
+  ->select('*')
+  ->get();
 ?>
+
 <div class="" style="width: 100% !important;">
 
   <form action="/search-propeties" method="get">
@@ -17,7 +22,7 @@ $cities = DB::table('cities')
             <select class="custom-select" id="purpose" name="purpose" style="color:grey;" required>
               <option value="" selected disabled>Purpose</option>
               <option value="renting" <?= (isset($_GET['purpose']) && $_GET['purpose'] == 'renting') ? "selected" : "" ?>>Rent</option>
-              <option value="selling" <?= (isset($_GET['purpose']) && $_GET['purpose'] == 'selling') ? "selected" : "" ?>>Sale</option>
+              <option value="selling" <?= (isset($_GET['purpose']) && $_GET['purpose'] == 'selling') ? "selected" : "" ?>>Buy</option>
             </select>
           </div>
 
@@ -26,13 +31,13 @@ $cities = DB::table('cities')
         <div class="col-lg-1" style="padding-left:0px !important">
 
           <div class="input-group input border-0">
-            <select class="custom-select " id="state" name="location" style="color:grey;">
+            <select class="custom-select " id="emirates" name="emirates" style="color:grey;">
               <option value="" selected disabled>Emirates</option>
-              @foreach($emirates as $state)
-              @if(isset($_GET['state']) && $_GET['state'] == $state->id)
-              <option value="{{$state->id}}" selected>{{$state->name}}</option>
+              @foreach($emirates as $emirate)
+              @if(isset($_GET['emirates']) && $_GET['emirates'] == $emirate->id)
+              <option value="{{$emirate->id}}" selected>{{$emirate->name}}</option>
               @else
-              <option value="{{$state->id}}">{{$state->name}}</option>
+              <option value="{{$emirate->id}}">{{$emirate->name}}</option>
               @endif
               @endforeach
 
@@ -48,9 +53,9 @@ $cities = DB::table('cities')
               <option value="" selected disabled>Location</option>
               @foreach($cities as $city)
               @if(isset($_GET['location']) && $_GET['location'] == $city->id)
-              <option value="{{$city->id}}" selected>{{$city->name}}</option>
+              <option value="{{$city->id}}" data-emirate-id="{{$city->state_id}}" selected>{{$city->name}}</option>
               @else
-              <option value="{{$city->id}}">{{$city->name}}</option>
+              <option value="{{$city->id}}" data-emirate-id="{{$city->state_id}}">{{$city->name}}</option>
               @endif
               @endforeach
 
@@ -272,4 +277,16 @@ $cities = DB::table('cities')
     </div>
   </form>
 
+  <script>
+    $(document).ready(function() {
+      $('#emirates').on('change', function() {
+        state_id = $("#emirates option:selected").val();
+        if (state_id != null) {
+          $("#location > option").css("display", "none");
+          $("#location > option[data-emirate-id=" + state_id + "]").css("display", "inline-block");
+          // alert(state_id);
+        }
+      });
+    });
+  </script>
 </div>
