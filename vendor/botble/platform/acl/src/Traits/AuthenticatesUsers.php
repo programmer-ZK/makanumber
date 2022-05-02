@@ -137,7 +137,7 @@ trait AuthenticatesUsers
 
         return $request->wantsJson()
             ? new Response('', 204)
-            : redirect()->intended($this->redirectPath());
+            : redirect('/') ;
     }
 
     /**

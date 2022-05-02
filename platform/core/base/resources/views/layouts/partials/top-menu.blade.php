@@ -1,17 +1,3 @@
-<?php
-if (Auth::user()->id != null) {
-    $user_id =   Auth::user()->id;
-    $user_role_id =  DB::table('role_users')->where('user_id', '=', $user_id)->value('role_id');
-    if ($user_role_id == 3) {
-        echo "<script>window.location = '/'</script>";
-        // header("Location: /");
-    }
-}
-
-?>
-
-
-
 <div class="top-menu">
     <ul class="nav navbar-nav float-end">
         @auth
