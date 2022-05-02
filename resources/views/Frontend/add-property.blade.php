@@ -19,6 +19,13 @@ $emirates = DB::table('states')
 @section('content')
 
 <div class="overflow-hidden">
+  <style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
 
   <!-- Slider Image Section -->
   <div class="conatiner " style="border-top:2px solid grey; ">
