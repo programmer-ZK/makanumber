@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 
 <style>
@@ -82,7 +81,13 @@
 
 <!-- Sign In -->
 <section class="container-fluid">
- 
+
+  @if (session('status'))
+  <div class="alert alert-success">
+    {{ session('status') }}
+  </div>
+  @endif
+  
   @if(Session::has('success'))
   <div class="alert alert-success">
     {{ Session::get('success') }}
@@ -103,11 +108,11 @@
       <form class="form-container" action="{{route('access.login')}}" method="post">
         @csrf
         <div class="form-group">
-          <label for="exampleInputEmail1"style="color: black;">{{ trans('core/acl::auth.login.username') }}</label>
+          <label for="exampleInputEmail1" style="color: black;">{{ trans('core/acl::auth.login.username') }}</label>
           {!! Form::text('username', request()->input('email', old('username', app()->environment('demo') ? config('core.base.general.demo.account.username', 'botble') : null)), ['class' => 'form-control', 'placeholder' => trans('core/acl::auth.login.username')]) !!}
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1"style="color: black;">{{ trans('core/acl::auth.login.password') }}</label>
+          <label for="exampleInputPassword1" style="color: black;">{{ trans('core/acl::auth.login.password') }}</label>
           {!! Form::input('password', 'password', request()->input('email') ? null : (app()->environment('demo') ? config('core.base.general.demo.account.password', '159357') : null), ['class' => 'form-control', 'placeholder' => trans('core/acl::auth.login.password')]) !!}
         </div>
         <div class="form-group form-check">
