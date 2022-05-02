@@ -186,7 +186,8 @@ class UserController extends Controller
     $activations_id = DB::table('activations')->where('user_id', '=', $id)->value('completed');
 
     if ($activations_id > 0) {
-      return view('Frontend.activate');
+      // return view('Frontend.activate');
+      return view('core/acl::auth.login')->with('success', `Dear {{$name}}, Your account has already been activated`);
     } else {
       DB::table('activations')->insert([
         'user_id' => $id,
@@ -197,7 +198,8 @@ class UserController extends Controller
       $user->email_verified_at =  Carbon::now()->toDateTimeString();
       $user->update();
 
-      return view('Frontend.activate', ['name' => $name]);
+      // return view('Frontend.activate', ['name' => $name]);
+      return view('core/acl::auth.login')->with('success', `Dear {{$name}}, Your account is successfully activated, Please Log in to continue!`);
     }
   }
 
