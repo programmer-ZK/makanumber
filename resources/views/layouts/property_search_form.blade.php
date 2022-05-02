@@ -284,7 +284,7 @@ $emirates = DB::table('states')
         if (state_id != null) {
           $("#location > option").css("display", "none");
           $("#location > option[data-emirate-id=" + state_id + "]").css("display", "inline-block");
-          // alert(state_id);
+          $("#location").attr("required", "required")
         }
       });
     });
