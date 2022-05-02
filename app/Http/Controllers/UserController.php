@@ -182,6 +182,7 @@ class UserController extends Controller
   {
 
     $id = DB::table('users')->where('remember_token', '=', $token)->value('id');
+    $name = DB::table('users')->where('remember_token', '=', $token)->value('first_name');
     $activations_id = DB::table('activations')->where('user_id', '=', $id)->value('completed');
 
     if ($activations_id > 0) {
@@ -196,7 +197,7 @@ class UserController extends Controller
       $user->email_verified_at =  Carbon::now()->toDateTimeString();
       $user->update();
 
-      return view('Frontend.activate');
+      return view('Frontend.activate', ['name' => $name]);
     }
   }
 
