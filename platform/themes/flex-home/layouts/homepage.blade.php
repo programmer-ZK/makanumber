@@ -114,7 +114,7 @@ $pkg = [];
   }
 
   #slogan h1 {
-    font-size: 80px;
+    font-size: 3.5rem;
     color: white;
     font-family: 'Dancing Script', cursive !important;
   }
@@ -239,7 +239,7 @@ $pkg = [];
           <h1>Trusted Place To Find Your Dream Home</h1>
         </div>
         <div class="ml-4">
-          @include('layouts.property_search_form')
+          @include('layouts.prop_srch_form_home')
         </div>
       </div>
 
