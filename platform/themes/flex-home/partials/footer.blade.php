@@ -110,7 +110,7 @@
 
     <div class="col-sm-4 pt-2 pb-2 display" style="border-top:1px solid black; text-align:right !important; float:right;">
       <a style="text-decoration: underline; color:black;" href="/privacy-policy">Terms of use.</a>
-      <a style="text-decoration: underline; color:black;" href="/privacy-policy"> Privacy Ploicy</a>
+      <a style="text-decoration: underline; color:black;" href="/privacy-policy"> Privacy policy</a>
     </div>
   </div>
 </div>

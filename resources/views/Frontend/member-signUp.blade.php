@@ -435,7 +435,7 @@
       </div>
 
       <div class="col-sm-3 pt-2 pb-2 " style="border-top:1px solid black;">
-        <a style="text-decoration: underline;">Terms of use. Privacy Ploicy</a>
+        <a style="text-decoration: underline;">Terms of use. Privacy policy</a>
       </div>
 
     </div>
