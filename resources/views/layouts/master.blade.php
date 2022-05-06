@@ -53,7 +53,8 @@
     color: white !important;
     background-color: #00b4a2 !important;
   }
-  .green1{
+
+  .green1 {
     border: 1px solid #00b4a2 !important;
   }
 
@@ -320,9 +321,9 @@
         </a>
         <p style="font-size:13px;" class="mt-3 foot-descip">Buying, Selling, Renting a property is an uphill battle but do not stress it, we have got your back. Whether you are planning to buy, sell or rent, we can help you move forward, to experience the most unprecedented services along with enormous numbers of options according to your choice and preference because home is not just a place. IT’S A FEELING!</p>
         <div class="row social-icons">
-          <i class="fab fa-facebook-f social-icon ml-2 p-2"></i>
-          <i class="fab fa-twitter social-icon ml-2 p-2"></i>
-          <i class="fab fa-youtube social-icon ml-2 p-2"></i>
+          <div class="social-icon  ml-2 text-center"> <i class="fab fa-facebook-f p-1"></i></div>
+          <div class="social-icon  ml-2 text-center"> <i class="fab fa-twitter p-1"></i></div>
+          <div class="social-icon  ml-2 text-center"> <i class="fab fa-youtube p-1"></i></div>
         </div>
       </div>
 
@@ -426,7 +427,7 @@
     </div>
   </div>
 
-  
+
 </body>
 
 
