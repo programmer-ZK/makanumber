@@ -53,6 +53,9 @@
     color: white !important;
     background-color: #00b4a2 !important;
   }
+  .green1{
+    border: 1px solid #00b4a2;
+  }
 
   @media screen and (max-width: 480px) {
     html {
