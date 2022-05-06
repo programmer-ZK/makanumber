@@ -15,7 +15,7 @@ $cities = DB::table('cities')
   ->select('*')
   ->get();
 
-  $propertyTypes = DB::table('re_categories')
+$propertyTypes = DB::table('re_categories')
   ->select('*')
   ->get();
 
@@ -127,6 +127,11 @@ $pkg = [];
     transform: translate(-50%, -50%);
     width: 100%;
     /*height: 500px; */
+  }
+
+  .prop_name {
+    text-transform: lowercase !important;
+    /* text-transform: capitalize  !important; */
   }
 
   @media screen and (max-width: 768px) {
@@ -306,13 +311,13 @@ $pkg = [];
                       <div class="col-sm-7 justify-content-start" style="display:flex;">
                         @foreach ($propertyUrl as $k => $url)
                         @if ($loop->first)
-                        <p><a style="color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">
-                            <span style="text-transform: capitalize !important;">
+                        <p class="prop_name">
+                          <a style=" color:white !important; font-weight:bold; padding-left:25px;" href="properties/{{ $url->key }}">
+                            <span>
                               {{ Str::limit($prop->name, 30) }}
-
-
                             </span>
-                          </a></p>
+                          </a>
+                        </p>
                         @endif
                         @endforeach
                       </div>
@@ -472,12 +477,13 @@ $pkg = [];
                     <div class="col-sm-7 justify-content-start" style="display:flex;">
                       @foreach ($propertyUrl as $k => $url)
                       @if ($loop->first)
-                      <p><a style="color:white !important; font-weight:bold; padding-left:25px; " href="properties/{{ $url->key }}">
-
-                          <span style="text-transform: capitalize !important;">
+                      <p class="prop_name">
+                        <a style=" color:white !important; font-weight:bold; padding-left:25px; " href="properties/{{ $url->key }}">
+                          <span>
                             {{ Str::limit($prop->name, 30) }}
                           </span>
-                        </a></p>
+                        </a>
+                      </p>
 
                       @endif
                       @endforeach

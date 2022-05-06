@@ -8,7 +8,7 @@ $emirates = DB::table('states')
   ->get();
 ?>
 
-<div class="" style="width: 100% !important;">
+<div class="" style="width: 95% !important; margin-left: 2%;">
 
   <form action="/search-propeties" method="get">
     @csrf

@@ -41,7 +41,8 @@ if ($propPurpose == "renting") {
 
 
 <div class="mt-3 pb-5 properties ml-4 mr-4">
-  <div class="row no-gutters">
+
+  <div class="row no-gutters" style="width: 93% !important; margin-left: 2%;">
     <div class="col-sm-12 border" style="padding: 10px">
       <span>
         <a href="/">Home</a>
@@ -50,6 +51,8 @@ if ($propPurpose == "renting") {
       </span>
     </div>
   </div>
+
+
   <div class="row mb-2 mt-3">
     <div class="col-sm-8">
       <h3 style="font-weight:bold;">{{$results->count()}} Properties Found</h3>
@@ -59,6 +62,7 @@ if ($propPurpose == "renting") {
       <i class="fa fa-th p-1 " aria-hidden="true" style="font-size:24px; cursor:pointer; background-color:#00B4A2;color:white !important; border-radius: 5px; padding: 8px !important;" id="grid"></i>
     </div>
   </div>
+
   <div class="row list">
     @foreach($results as $prop)
     @php
@@ -131,12 +135,20 @@ if ($propPurpose == "renting") {
 
               <?php
               $users = \App\Models\UserModel::where(['id' => $prop->author_id])->get();
+
               ?>
 
 
               @foreach($users as $user)
+              <?php
+              $documents = \App\Models\Document::where('user_id', $user['id'])->get();
+              $doc_count = $documents->count();
+              ?>
+              
               @if($user['avatar_id'])
-              <span class="pl-2 pr-2" style="float:right !important; text-align:right !important;">{{$user['first_name']}} {{$user['last_name']}}</span><img src="{{asset('public/storage/users/'.$user['avatar_id'])}}" style="width:24px; height:24px; border-radius: 50%; float:right !important; text-align:right !important; " alt="profile-pic" class="mb-1" />
+              <span class="pl-2 pr-2" style="float:right !important; text-align:right !important;">{{$user['first_name']}} {{$user['last_name']}} @if ($doc_count >= 1)
+                <i class="fas fa-badge-check" aria-hidden="true" style="color:#00b4a2;"></i>
+                @endif</span><img src="{{asset('public/storage/users/'.$user['avatar_id'])}}" style="width:24px; height:24px; border-radius: 50%; float:right !important; text-align:right !important; " class="mb-1" />
               @else
               <span class="pl-2 pr-2" style="float:right !important; text-align:right !important;">{{$user['first_name']}} {{$user['last_name']}}</span> <span style="text-align:right !important; float:right !important;"><span class="icon"><i class="fa fa-user" aria-hidden="true" style="height:34px; border-radius:5px;"></i></span></span>
               @endif
