@@ -134,6 +134,12 @@ $pkg = [];
     /* text-transform: capitalize  !important; */
   }
 
+  #search-form12 {
+    position: absolute;
+    left: 25%;
+    width: 100%;
+  }
+
   @media screen and (max-width: 768px) {
 
     #slogan h1 {
@@ -147,6 +153,10 @@ $pkg = [];
   }
 
   @media screen and (max-width: 480px) {
+    #search-form12 {
+      left: 0;
+      position: relative;
+    }
 
     html {
       overflow-x: hidden !important;

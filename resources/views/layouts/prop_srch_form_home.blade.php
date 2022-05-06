@@ -8,7 +8,8 @@ $emirates = DB::table('states')
   ->get();
 ?>
 
-<div class="" id="search-form" style="position: absolute; left: 25% !important; width: 100% !important;">
+
+<div id="search-form12" style="">
 
   <form action="/search-propeties" method="get">
     @csrf
@@ -20,7 +21,6 @@ $emirates = DB::table('states')
 
           <div class="input-group input border-0">
             <select class="custom-select" id="purpose" name="purpose" style="color:grey;" required>
-              <option value="" selected disabled>Purpose</option>
               <option value="renting" <?= (isset($_GET['purpose']) && $_GET['purpose'] == 'renting') ? "selected" : "" ?>>Rent</option>
               <option value="selling" <?= (isset($_GET['purpose']) && $_GET['purpose'] == 'selling') ? "selected" : "" ?>>Buy</option>
             </select>
