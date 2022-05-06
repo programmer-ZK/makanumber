@@ -141,7 +141,10 @@ $pkg = [];
   }
 
   @media screen and (max-width: 768px) {
-
+    #search-form12 {
+      left: 0;
+      position: relative;
+    }
     #slogan h1 {
       font-size: 27px;
     }
