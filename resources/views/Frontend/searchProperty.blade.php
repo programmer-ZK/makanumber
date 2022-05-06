@@ -135,20 +135,23 @@ if ($propPurpose == "renting") {
 
               <?php
               $users = \App\Models\UserModel::where(['id' => $prop->author_id])->get();
-
               ?>
 
-
               @foreach($users as $user)
+
               <?php
               $documents = \App\Models\Document::where('user_id', $user['id'])->get();
               $doc_count = $documents->count();
               ?>
-              
+
               @if($user['avatar_id'])
-              <span class="pl-2 pr-2" style="float:right !important; text-align:right !important;">{{$user['first_name']}} {{$user['last_name']}} @if ($doc_count >= 1)
+              <span class="pl-2 pr-2" style="float:right !important; text-align:right !important;">
+                {{$user['first_name']}} {{$user['last_name']}}
+                @if ($doc_count >= 1)
                 <i class="fas fa-badge-check" aria-hidden="true" style="color:#00b4a2;"></i>
-                @endif</span><img src="{{asset('public/storage/users/'.$user['avatar_id'])}}" style="width:24px; height:24px; border-radius: 50%; float:right !important; text-align:right !important; " class="mb-1" />
+                @endif
+              </span>
+              <img src="{{asset('public/storage/users/'.$user['avatar_id'])}}" style="width:24px; height:24px; border-radius: 50%; float:right !important; text-align:right !important; " class="mb-1" />
               @else
               <span class="pl-2 pr-2" style="float:right !important; text-align:right !important;">{{$user['first_name']}} {{$user['last_name']}}</span> <span style="text-align:right !important; float:right !important;"><span class="icon"><i class="fa fa-user" aria-hidden="true" style="height:34px; border-radius:5px;"></i></span></span>
               @endif

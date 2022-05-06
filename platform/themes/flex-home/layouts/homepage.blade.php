@@ -359,6 +359,7 @@ $pkg = [];
                           {{ $prop->number_bathroom }}</span>
                         @endif
                         &nbsp;
+                        
                         <?php
                         $users = \App\Models\UserModel::where(['id' => $prop->author_id])->get();
 
