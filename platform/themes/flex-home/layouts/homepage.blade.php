@@ -359,22 +359,21 @@ $pkg = [];
                           {{ $prop->number_bathroom }}</span>
                         @endif
                         &nbsp;
-                        
+
                         <?php
                         $users = \App\Models\UserModel::where(['id' => $prop->author_id])->get();
-
                         ?>
+
                         @foreach ($users as $user)
 
                         <?php
-
                         $documents = \App\Models\Document::where('user_id', $user['id'])->get();
                         $doc_count = $documents->count();
-
                         ?>
 
                         @if ($user['avatar_id'])
-                        <span class="pl-2 pr-2 userName">{{ $user['first_name'] }}
+                        <span class="pl-2 pr-2 userName">
+                          {{ $user['first_name'] }}
                           {{ $user['last_name'] }}
                           @if ($doc_count >= 1)
                           <i class="fas fa-badge-check" aria-hidden="true" style="color:#00b4a2;"></i>
